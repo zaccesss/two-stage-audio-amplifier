@@ -1,0 +1,291 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780" font-family="Arial, Calibri, sans-serif">
+
+  <!-- White background -->
+  <rect width="1200" height="780" fill="white"/>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SYSTEM BOUNDARY
+  ═══════════════════════════════════════════════════════════ -->
+  <rect x="30" y="30" width="1140" height="720"
+        fill="none" stroke="#7F7F7F" stroke-width="2"
+        stroke-dasharray="10,6" rx="4"/>
+  <!-- Boundary label -->
+  <text x="600" y="62" text-anchor="middle"
+        font-size="15" font-weight="bold" fill="#7F7F7F"
+        letter-spacing="1">Audio Amplifier System – EI1EL2</text>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       POWER SYSTEM (TOP CENTRE)
+  ═══════════════════════════════════════════════════════════ -->
+  <!-- Power Input block -->
+  <rect x="460" y="90" width="170" height="68"
+        fill="#ED7D31" stroke="none" rx="4"/>
+  <text x="545" y="116" text-anchor="middle"
+        font-size="11" font-weight="bold" fill="#1A1A1A">Power Input</text>
+  <text x="545" y="131" text-anchor="middle"
+        font-size="10" fill="#1A1A1A">9V PP3 Battery</text>
+  <text x="545" y="145" text-anchor="middle"
+        font-size="10" fill="#1A1A1A">or 12V DC Supply</text>
+
+  <!-- Arrow: Power Input → On/Off Switch -->
+  <line x1="630" y1="124" x2="680" y2="124"
+        stroke="#404040" stroke-width="1.5"/>
+  <polygon points="680,120 688,124 680,128" fill="#404040"/>
+
+  <!-- On/Off Switch + Power LED block -->
+  <rect x="688" y="108" width="130" height="32"
+        fill="#70AD47" stroke="none" rx="6"/>
+  <text x="753" y="121" text-anchor="middle"
+        font-size="10" font-weight="bold" fill="white">On/Off Switch</text>
+  <text x="753" y="133" text-anchor="middle"
+        font-size="10" fill="white">+ Power LED</text>
+
+  <!-- Arrow: Switch → +V rail junction -->
+  <line x1="818" y1="124" x2="870" y2="124"
+        stroke="#404040" stroke-width="1.5"/>
+  <polygon points="870,120 878,124 870,128" fill="#404040"/>
+
+  <!-- +V Rail label -->
+  <text x="884" y="120" font-size="10" fill="#404040" font-weight="bold">+V (9–12V)</text>
+
+  <!-- Vertical +V rail going down to ICs -->
+  <!-- Rail line from top to TL071 power pin -->
+  <line x1="878" y1="128" x2="878" y2="310"
+        stroke="#404040" stroke-width="1.5" stroke-dasharray="5,3"/>
+
+  <!-- Branch to TL071 -->
+  <line x1="878" y1="260" x2="648" y2="260"
+        stroke="#404040" stroke-width="1.5"/>
+  <polygon points="648,256 640,260 648,264" fill="#404040"/>
+
+  <!-- Branch to OPA551 -->
+  <line x1="878" y1="310" x2="808" y2="310"
+        stroke="#404040" stroke-width="1.5"/>
+  <polygon points="808,306 800,310 808,314" fill="#404040"/>
+
+  <!-- 0V GND rail -->
+  <!-- Vertical 0V line -->
+  <line x1="920" y1="128" x2="920" y2="570"
+        stroke="#404040" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="926" y="120" font-size="10" fill="#404040" font-weight="bold">0V (GND)</text>
+
+  <!-- Arrow from Switch top to 0V rail label start -->
+  <line x1="818" y1="140" x2="920" y2="140"
+        stroke="none"/>
+
+  <!-- GND return from TL071 -->
+  <line x1="920" y1="400" x2="648" y2="400"
+        stroke="#404040" stroke-width="1.5"/>
+  <polygon points="648,396 640,400 648,404" fill="#404040"/>
+
+  <!-- GND return from OPA551 -->
+  <line x1="920" y1="450" x2="808" y2="450"
+        stroke="#404040" stroke-width="1.5"/>
+  <polygon points="808,446 800,450 808,454" fill="#404040"/>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       DECOUPLING BLOCK
+  ═══════════════════════════════════════════════════════════ -->
+  <rect x="950" y="200" width="172" height="58"
+        fill="#E8E8E8" stroke="#AAAAAA" stroke-width="1" rx="5"/>
+  <text x="1036" y="220" text-anchor="middle"
+        font-size="10" font-weight="bold" fill="#404040">Decoupling</text>
+  <text x="1036" y="234" text-anchor="middle"
+        font-size="9" fill="#555555">100nF near each IC</text>
+  <text x="1036" y="247" text-anchor="middle"
+        font-size="9" fill="#555555">10µF bulk near OPA551</text>
+
+  <!-- Decoupling to +V rail -->
+  <line x1="950" y1="220" x2="878" y2="220"
+        stroke="#404040" stroke-width="1" stroke-dasharray="3,2"/>
+  <!-- Decoupling to GND rail -->
+  <line x1="950" y1="245" x2="920" y2="245"
+        stroke="#404040" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SIGNAL PATH BLOCKS
+  ═══════════════════════════════════════════════════════════ -->
+
+  <!-- INPUT BLOCK -->
+  <rect x="60" y="298" width="148" height="68"
+        fill="#2CA6A4" stroke="none" rx="4"/>
+  <text x="134" y="320" text-anchor="middle"
+        font-size="11" font-weight="bold" fill="white">3.5mm Stereo Input</text>
+  <text x="134" y="336" text-anchor="middle"
+        font-size="10" fill="white">(Phone L + R)</text>
+  <text x="134" y="352" text-anchor="middle"
+        font-size="10" fill="white">Summed to Mono</text>
+
+  <!-- Signal arrow: Input → TL071 -->
+  <line x1="208" y1="332" x2="262" y2="332"
+        stroke="#404040" stroke-width="2.5"/>
+  <polygon points="262,326.5 274,332 262,337.5" fill="#404040"/>
+  <text x="235" y="325" text-anchor="middle"
+        font-size="9" fill="#555555">Vin</text>
+
+  <!-- TL071 BLOCK -->
+  <rect x="274" y="278" width="204" height="108"
+        fill="#2E75B6" stroke="none" rx="8"/>
+  <text x="376" y="302" text-anchor="middle"
+        font-size="12" font-weight="bold" fill="white">TL071</text>
+  <text x="376" y="319" text-anchor="middle"
+        font-size="10" fill="white">Summing Amplifier</text>
+  <text x="376" y="334" text-anchor="middle"
+        font-size="10" fill="white">Active Band-Pass Filter</text>
+  <text x="376" y="349" text-anchor="middle"
+        font-size="10" fill="white">Voltage Gain Stage</text>
+  <text x="376" y="364" text-anchor="middle"
+        font-size="10" font-weight="bold" fill="#BDD7EE">Gain ≈ 3.42 V/V</text>
+  <text x="376" y="377" text-anchor="middle"
+        font-size="9" fill="#BDD7EE">Band-pass: 6.6 Hz – 28.5 kHz</text>
+
+  <!-- Signal arrow: TL071 → OPA551 -->
+  <line x1="478" y1="332" x2="534" y2="332"
+        stroke="#404040" stroke-width="2.5"/>
+  <polygon points="534,326.5 546,332 534,337.5" fill="#404040"/>
+  <text x="506" y="325" text-anchor="middle"
+        font-size="9" fill="#555555">Vout₁</text>
+
+  <!-- OPA551 BLOCK -->
+  <rect x="546" y="278" width="204" height="108"
+        fill="#2E75B6" stroke="none" rx="8"/>
+  <text x="648" y="302" text-anchor="middle"
+        font-size="12" font-weight="bold" fill="white">OPA551</text>
+  <text x="648" y="319" text-anchor="middle"
+        font-size="10" fill="white">Current Amplifier</text>
+  <text x="648" y="334" text-anchor="middle"
+        font-size="10" fill="white">Power Output Stage</text>
+  <text x="648" y="349" text-anchor="middle"
+        font-size="10" fill="white">Drives 8Ω Load</text>
+  <text x="648" y="364" text-anchor="middle"
+        font-size="10" font-weight="bold" fill="#BDD7EE">Target Output ≈ 3 Vpp</text>
+  <text x="648" y="377" text-anchor="middle"
+        font-size="9" fill="#BDD7EE">Unity Voltage Gain Buffer</text>
+
+  <!-- Signal arrow: OPA551 → Speaker -->
+  <line x1="750" y1="332" x2="804" y2="332"
+        stroke="#404040" stroke-width="2.5"/>
+  <polygon points="804,326.5 816,332 804,337.5" fill="#404040"/>
+  <text x="777" y="325" text-anchor="middle"
+        font-size="9" fill="#555555">Vout</text>
+
+  <!-- SPEAKER / OUTPUT BLOCK -->
+  <rect x="816" y="298" width="148" height="68"
+        fill="#C00000" stroke="none" rx="4"/>
+  <text x="890" y="322" text-anchor="middle"
+        font-size="11" font-weight="bold" fill="white">8Ω Speaker</text>
+  <text x="890" y="338" text-anchor="middle"
+        font-size="10" fill="white">Mono Output</text>
+  <text x="890" y="354" text-anchor="middle"
+        font-size="10" fill="#FFAAAA">≈ 3 Vpp Max</text>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       MID-SUPPLY BIAS NETWORK
+  ═══════════════════════════════════════════════════════════ -->
+  <rect x="274" y="470" width="204" height="52"
+        fill="#D0E4F5" stroke="#2E75B6" stroke-width="1.2" rx="6"/>
+  <text x="376" y="492" text-anchor="middle"
+        font-size="10" font-weight="bold" fill="#1A3F6F">Mid-Supply Bias Network</text>
+  <text x="376" y="508" text-anchor="middle"
+        font-size="9.5" fill="#1A3F6F">(Vcc / 2 Reference)</text>
+
+  <!-- Arrow: Bias → TL071 non-inv input -->
+  <line x1="376" y1="470" x2="376" y2="386"
+        stroke="#404040" stroke-width="1.5"/>
+  <polygon points="372,386 376,378 380,386" fill="#404040"/>
+  <text x="384" y="436" font-size="9" fill="#555555">V_ref</text>
+
+  <!-- Bias connection to GND rail (bottom) -->
+  <line x1="376" y1="522" x2="376" y2="560"
+        stroke="#404040" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="376" y1="560" x2="920" y2="560"
+        stroke="#404040" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- Bias connection to +V (tap from supply) -->
+  <line x1="478" y1="496" x2="878" y2="496"
+        stroke="#404040" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="878" y1="496" x2="878" y2="310"
+        stroke="none"/>
+  <text x="670" y="488" text-anchor="middle"
+        font-size="9" fill="#888888">Voltage divider tap from +V</text>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       CAPACITOR COUPLING LABELS
+  ═══════════════════════════════════════════════════════════ -->
+  <!-- Coupling cap between Input and TL071 -->
+  <rect x="214" y="316" width="48" height="32"
+        fill="#F5F5F5" stroke="#AAAAAA" stroke-width="1" rx="3"/>
+  <text x="238" y="330" text-anchor="middle"
+        font-size="9" fill="#444444">C_in</text>
+  <text x="238" y="342" text-anchor="middle"
+        font-size="8.5" fill="#777777">100µF</text>
+
+  <!-- Coupling cap between OPA551 and Speaker -->
+  <rect x="760" y="316" width="44" height="32"
+        fill="#F5F5F5" stroke="#AAAAAA" stroke-width="1" rx="3"/>
+  <text x="782" y="330" text-anchor="middle"
+        font-size="9" fill="#444444">C_out</text>
+  <text x="782" y="342" text-anchor="middle"
+        font-size="8.5" fill="#777777">470nF</text>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       STAGE LABELS (below blocks)
+  ═══════════════════════════════════════════════════════════ -->
+  <text x="134" y="380" text-anchor="middle"
+        font-size="9" fill="#888888" font-style="italic">Stage 0: Input</text>
+  <text x="376" y="415" text-anchor="middle"
+        font-size="9" fill="#888888" font-style="italic">Stage 1: Voltage Gain</text>
+  <text x="648" y="415" text-anchor="middle"
+        font-size="9" fill="#888888" font-style="italic">Stage 2: Current/Power</text>
+  <text x="890" y="380" text-anchor="middle"
+        font-size="9" fill="#888888" font-style="italic">Output Load</text>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       POWER FLOW ARROWS (from rails down to blocks — labelled)
+  ═══════════════════════════════════════════════════════════ -->
+  <!-- +V label at TL071 -->
+  <text x="655" y="253" font-size="9" fill="#ED7D31" font-weight="bold">+V</text>
+  <!-- 0V label at TL071 -->
+  <text x="655" y="413" font-size="9" fill="#404040">0V</text>
+  <!-- +V label at OPA551 -->
+  <text x="807" y="303" font-size="9" fill="#ED7D31" font-weight="bold">+V</text>
+  <!-- 0V label at OPA551 -->
+  <text x="807" y="463" font-size="9" fill="#404040">0V</text>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SIGNAL FLOW ANNOTATION
+  ═══════════════════════════════════════════════════════════ -->
+  <text x="600" y="620" text-anchor="middle"
+        font-size="10" fill="#888888">
+    — — — — — — ▶  Signal Flow (left → right)
+  </text>
+  <line x1="400" y1="630" x2="800" y2="630"
+        stroke="#404040" stroke-width="2" stroke-dasharray="6,3"
+        marker-end="url(#arrow_signal)"/>
+
+  <!-- Defs for arrowhead marker -->
+  <defs>
+    <marker id="arrow_signal" markerWidth="8" markerHeight="6"
+            refX="6" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#404040"/>
+    </marker>
+  </defs>
+
+  <text x="600" y="648" text-anchor="middle"
+        font-size="9" fill="#AAAAAA" font-style="italic">
+    ↕  Power Flow (top → bottom)
+  </text>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       CORNER WATERMARK / MODULE CODE
+  ═══════════════════════════════════════════════════════════ -->
+  <text x="1140" y="746" text-anchor="end"
+        font-size="9" fill="#CCCCCC" font-style="italic">
+    EI1EL2 | Aston University | Isaac Adjei | 240191278
+  </text>
+  <text x="60" y="746"
+        font-size="9" fill="#CCCCCC" font-style="italic">
+    Fig. 1 — Top-Level System Block Diagram
+  </text>
+
+</svg>
