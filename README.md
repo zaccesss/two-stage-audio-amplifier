@@ -19,7 +19,7 @@ A two-stage audio amplifier designed to take a line-level audio input from a mob
 <h2 align="center">Final Assembly</h2>
 
 <p align="center">
-  <img src="media/images/Figure17b_PCB_WithSpeaker.jpg" alt="PCB with speaker connected" width="480">
+  <img src="media/images/Figure17c_PCB_Angled.jpg" alt="Assembled PCB angled view showing component placement" width="480">
 </p>
 
 ---
