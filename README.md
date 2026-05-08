@@ -1,17 +1,49 @@
 # Two-Stage Audio Amplifier
 
-A two-stage audio amplifier designed to take a line-level audio input from a mobile phone and drive an 8 ohm speaker. The amplifier was designed, simulated, prototyped and implemented as a custom PCB during first-year Electronic Engineering studies at Aston University.
+<p align="center">
+  <a href="https://isaacadjei.me">
+    <img src="https://img.shields.io/badge/Website-isaacadjei.me-111111?style=for-the-badge&logo=firefox&logoColor=white">
+  </a>
+  <a href="https://www.linkedin.com/in/isaacadjei">
+    <img src="https://img.shields.io/badge/LinkedIn-Isaac_Adjei-0a66c2?style=for-the-badge&logo=linkedin&logoColor=white">
+  </a>
+  <a href="mailto:offices.isaac@gmail.com">
+    <img src="https://img.shields.io/badge/Email-Contact-ff6f61?style=for-the-badge&logo=gmail&logoColor=white">
+  </a>
+  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge">
+</p>
+
+A two-stage audio amplifier designed to take a line-level audio input from a mobile phone and drive an 8 Ω speaker. Stage 1 is an inverting active band-pass filter built around a TL071 op-amp. Stage 2 is a unity-gain power buffer built around an OPA551, providing the current drive needed to power the speaker. The full design was simulated in Proteus SPICE, built and verified on breadboard and implemented as a custom PCB.
+
+<h2 align="center">Final Assembly</h2>
+
+<p align="center">
+  <img src="media/images/Figure17b_PCB_WithSpeaker.jpg" alt="PCB with speaker connected" width="700">
+</p>
+
+---
+
+## Documentation Hub
+
+<p align="center">
+  <a href="DOCUMENTATION.md">📖 Documentation</a> &nbsp;•&nbsp;
+  <a href="FAQ.md">❓ FAQ</a> &nbsp;•&nbsp;
+  <a href="media/GALLERY.md">🖼️ Gallery</a> &nbsp;•&nbsp;
+  <a href="report/audio-amplifier-report.pdf">📄 Full Report</a> &nbsp;•&nbsp;
+  <a href="CONTRIBUTING.md">🤝 Contributing</a>
+</p>
 
 ---
 
 ## Overview
 
-The design consists of two cascaded stages:
+The amplifier consists of two cascaded stages:
 
-- **Stage 1 - Active Band-Pass Filter:** An inverting summing active band-pass filter built around a TL071 operational amplifier. This stage provides frequency selectivity across the human hearing range and delivers the required voltage gain to bring the input signal up to the target output level.
-- **Stage 2 - Power Buffer:** A unity-gain power buffer built around an OPA551 operational amplifier, providing the current drive capability required to power an 8 ohm speaker load without adding gain.
+- **Stage 1 — TL071 Active Band-Pass Filter:** Provides frequency selectivity across the human hearing range (5 Hz to 28.54 kHz) and voltage gain to bring the 0.87 Vpp mobile phone output up to 3 Vpp.
+- **Stage 2 — OPA551 Unity-Gain Buffer:** Replicates the Stage 1 output voltage at high current, driving the 8 Ω speaker load without adding gain.
 
-The full design was developed through hand calculations, verified using Proteus SPICE simulation, built and tested on breadboard (first with a dual supply, then adapted for single supply) and implemented as a final PCB.
+The design was taken from initial calculations through Proteus SPICE simulation, dual-supply breadboard, single-supply breadboard and finally a completed PCB.
 
 ---
 
@@ -19,16 +51,16 @@ The full design was developed through hand calculations, verified using Proteus 
 
 | Parameter | Value |
 |---|---|
-| Input source | iPhone 14 Pro Max (3.5 mm audio) |
+| Input source | iPhone 14 Pro Max |
 | Input voltage | 0.872 Vpp at 440 Hz |
-| Output voltage target | 3 Vpp |
-| Speaker load | 8 ohm |
+| Output voltage | 3 Vpp at 440 Hz |
+| Speaker load | 8 Ω |
 | Lower cutoff frequency | 5 Hz |
 | Upper cutoff frequency | 28.54 kHz |
 | Stage 1 IC | TL071CP |
 | Stage 2 IC | OPA551PA |
-| Feedback resistor | 82 kohm |
-| Supply configuration | Single supply (final design) |
+| Feedback resistor | 82 kΩ |
+| Supply configuration | Single supply |
 
 ---
 
@@ -36,12 +68,36 @@ The full design was developed through hand calculations, verified using Proteus 
 
 PCB measurements at 440 Hz:
 
-| Stage | Input | Output |
-|---|---|---|
-| Stage 1 (TL071 active filter) | 0.868 Vpp | 3.000 Vpp |
-| Stage 2 (OPA551 buffer) | 0.872 Vpp | 2.980 Vpp |
+| Stage | Input | Output | Notes |
+|---|---|---|---|
+| Stage 1 — TL071 active filter | 0.868 Vpp | 3.000 Vpp | Meets 3 Vpp target |
+| Stage 2 — OPA551 buffer | 0.872 Vpp | 2.980 Vpp | Unity gain confirmed |
 
-Both stages met design targets. The frequency response was verified across the full audio band on breadboard and PCB.
+Frequency response verified across the full audio band on both breadboard and PCB. Full results with simulation comparison in [DOCUMENTATION.md](DOCUMENTATION.md#10-results).
+
+---
+
+## Tech Stack
+
+<p align="center">
+  <img src="media/assets/proteus.jpg" alt="Proteus EDA" width="65" title="Proteus">
+  &nbsp;&nbsp;
+  <img src="https://techstack-generator.vercel.app/github-icon.svg" alt="GitHub" width="65" title="GitHub">
+  &nbsp;&nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" width="65" title="Git">
+  &nbsp;&nbsp;
+  <img src="https://img.shields.io/badge/Excel-217346?style=flat-square&logo=microsoft-excel&logoColor=white&labelColor=217346" alt="Excel" height="65" title="Microsoft Excel">
+  &nbsp;&nbsp;
+  <img src="https://img.shields.io/badge/Word-2B579A?style=flat-square&logo=microsoft-word&logoColor=white&labelColor=2B579A" alt="Word" height="65" title="Microsoft Word">
+</p>
+
+<p align="center">
+  <b>Proteus</b> &nbsp;&nbsp;&nbsp;&nbsp;
+  <b>GitHub</b> &nbsp;&nbsp;&nbsp;&nbsp;
+  <b>Git</b> &nbsp;&nbsp;&nbsp;&nbsp;
+  <b>Excel</b> &nbsp;&nbsp;&nbsp;&nbsp;
+  <b>Word</b>
+</p>
 
 ---
 
@@ -52,29 +108,17 @@ two-stage-audio-amplifier/
 ├── design/
 │   ├── calculations/       Design calculation workbooks and frequency response data
 │   └── proteus/
-│       └── exports/        Proteus SPICE simulation and PCB design exports
-├── docs/
-│   ├── briefing/           Project briefing, assignment brief and bill of materials
-│   └── reference/          Reference materials used during design
-├── labs/
-│   └── op-amp-practical/   Op-amp practical lab work supporting the design
+│       └── exports/        Schematic, PCB layout and simulation exports (PNG)
 ├── media/
+│   ├── images/             Circuit figures, PCB photographs and oscilloscope traces
 │   ├── block-diagrams/     System block diagrams and design flowcharts
-│   └── images/             Circuit figures, PCB photographs and oscilloscope traces
-├── report/                 Final technical report (PDF)
-└── workbooks/              Project management workbooks (BOM, Gantt, dashboard)
+│   └── GALLERY.md          Curated image gallery with descriptions
+├── report/
+│   └── audio-amplifier-report.pdf   Full technical report
+├── DOCUMENTATION.md        Complete technical reference
+├── CONTRIBUTING.md         Commit and workflow standards
+└── LICENSE                 MIT
 ```
-
----
-
-## Tools
-
-| Tool | Purpose |
-|---|---|
-| Proteus | Schematic capture, PCB layout and SPICE simulation |
-| Microsoft Excel | Design calculations and frequency response data analysis |
-| Microsoft Word | Technical report with IEEE formatting |
-| Oscilloscope (TBS1052C) | Breadboard and PCB measurements |
 
 ---
 
@@ -83,4 +127,13 @@ two-stage-audio-amplifier/
 Isaac "Zac" Adjei
 
 - GitHub: [zaccesss](https://github.com/zaccesss)
-- Email: isaacc.adjeii@gmail.com
+- Website: [isaacadjei.me](https://isaacadjei.me)
+- Email: offices.isaac@gmail.com
+
+<p align="center">
+  <b>Project Status:</b> Completed &nbsp;|&nbsp; <b>Last Updated:</b> May 2026
+</p>
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer" />
+</p>
