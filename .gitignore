@@ -1,0 +1,15 @@
+# Proteus workspace files
+*.workspace
+
+# Proteus project backups
+Project Backups/
+
+# Microsoft Office temporary files
+~$*
+
+# Windows
+desktop.ini
+Thumbs.db
+
+# macOS
+.DS_Store
