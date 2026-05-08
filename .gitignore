@@ -1,3 +1,7 @@
+# Source/reference folders not part of the repo
+EI1EL2 (Electronics 2)/
+neopixel-led-cube/
+
 # Proteus workspace files
 *.workspace
 
