@@ -19,7 +19,7 @@ A two-stage audio amplifier designed to take a line-level audio input from a mob
 <h2 align="center">Final Assembly</h2>
 
 <p align="center">
-  <img src="media/images/Figure17b_PCB_WithSpeaker.jpg" alt="PCB with speaker connected" width="700">
+  <img src="media/images/Figure17b_PCB_WithSpeaker.jpg" alt="PCB with speaker connected" width="480">
 </p>
 
 ---
@@ -86,9 +86,9 @@ Frequency response verified across the full audio band on both breadboard and PC
   &nbsp;&nbsp;
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" width="65" title="Git">
   &nbsp;&nbsp;
-  <img src="https://img.shields.io/badge/Excel-217346?style=flat-square&logo=microsoft-excel&logoColor=white&labelColor=217346" alt="Excel" height="65" title="Microsoft Excel">
+  <img src="https://cdn.simpleicons.org/microsoftexcel/217346" alt="Microsoft Excel" width="65" title="Microsoft Excel">
   &nbsp;&nbsp;
-  <img src="https://img.shields.io/badge/Word-2B579A?style=flat-square&logo=microsoft-word&logoColor=white&labelColor=2B579A" alt="Word" height="65" title="Microsoft Word">
+  <img src="https://cdn.simpleicons.org/microsoftword/2B579A" alt="Microsoft Word" width="65" title="Microsoft Word">
 </p>
 
 <p align="center">
