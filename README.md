@@ -40,8 +40,8 @@ A two-stage audio amplifier designed to take a line-level audio input from a mob
 
 The amplifier consists of two cascaded stages:
 
-- **Stage 1 — TL071 Active Band-Pass Filter:** Provides frequency selectivity across the human hearing range (5 Hz to 28.54 kHz) and voltage gain to bring the 0.87 Vpp mobile phone output up to 3 Vpp.
-- **Stage 2 — OPA551 Unity-Gain Buffer:** Replicates the Stage 1 output voltage at high current, driving the 8 Ω speaker load without adding gain.
+- **Stage 1 (TL071 Active Band-Pass Filter):** Provides frequency selectivity across the human hearing range (5 Hz to 28.54 kHz) and voltage gain to bring the 0.87 Vpp mobile phone output up to 3 Vpp.
+- **Stage 2 (OPA551 Unity-Gain Buffer):** Replicates the Stage 1 output voltage at high current, driving the 8 Ω speaker load without adding gain.
 
 The design was taken from initial calculations through Proteus SPICE simulation, dual-supply breadboard, single-supply breadboard and finally a completed PCB.
 
@@ -70,8 +70,8 @@ PCB measurements at 440 Hz:
 
 | Stage | Input | Output | Notes |
 |---|---|---|---|
-| Stage 1 — TL071 active filter | 0.868 Vpp | 3.000 Vpp | Meets 3 Vpp target |
-| Stage 2 — OPA551 buffer | 0.872 Vpp | 2.980 Vpp | Unity gain confirmed |
+| Stage 1 (TL071 active filter) | 0.868 Vpp | 3.000 Vpp | Meets 3 Vpp target |
+| Stage 2 (OPA551 buffer) | 0.872 Vpp | 2.980 Vpp | Unity gain confirmed |
 
 Frequency response verified across the full audio band on both breadboard and PCB. Full results with simulation comparison in [DOCUMENTATION.md](DOCUMENTATION.md#10-results).
 

@@ -41,7 +41,7 @@ Full technical reference for the two-stage audio amplifier project. Covers syste
 
 ## 1. Project Overview
 
-The two-stage audio amplifier takes a line-level audio signal from a mobile phone headphone output and drives an 8 Ω speaker at a target output voltage of 3 Vpp. The design was completed from initial hand calculations through Proteus SPICE simulation, breadboard prototyping on both dual and single supply, and a final PCB implementation.
+The two-stage audio amplifier takes a line-level audio signal from a mobile phone headphone output and drives an 8 Ω speaker at a target output voltage of 3 Vpp. The design was completed from initial hand calculations through Proteus SPICE simulation, breadboard prototyping on both dual and single supply and a final PCB implementation.
 
 The circuit uses two operational amplifiers in cascade. The first stage provides frequency selectivity and voltage gain. The second stage provides current drive capability without adding gain, allowing the amplifier to power an 8 Ω load directly.
 
@@ -172,7 +172,7 @@ Component subscripts match the schematic designators used throughout this projec
 
 The midband voltage gain is set by the ratio of the feedback resistor (R5 = 82 kΩ) to the input resistor. The target gain brings the 0.868 Vpp input up to 3 Vpp at the Stage 1 output.
 
-Measured at 440 Hz on the completed PCB: input 0.868 Vpp, output 3.000 Vpp — gain of approximately 3.46.
+Measured at 440 Hz on the completed PCB: input 0.868 Vpp, output 3.000 Vpp, giving a gain of approximately 3.46.
 
 ---
 
@@ -196,7 +196,7 @@ The OPA551PA is a high-voltage, high-current operational amplifier. Key characte
 
 Stage 2 is configured as a unity-gain voltage follower (output connected directly to the inverting input). The output voltage equals the input voltage at all frequencies within the op-amp bandwidth. No additional gain is introduced; the sole purpose of this stage is to provide the current drive that Stage 1 cannot supply into an 8 Ω load.
 
-Measured at 440 Hz on the completed PCB: input 0.872 Vpp, output 2.980 Vpp — confirming unity gain to within measurement precision.
+Measured at 440 Hz on the completed PCB: input 0.872 Vpp, output 2.980 Vpp, confirming unity gain to within measurement precision.
 
 ---
 
@@ -349,10 +349,10 @@ Measurements were taken at 440 Hz using a TBS1052C oscilloscope. A 470 nF capaci
 
 | Parameter | Calculated | Simulated | Breadboard (dual) | Breadboard (single) | PCB |
 |---|---|---|---|---|---|
-| Stage 1 output at 440 Hz | 3.0 Vpp | — | — | — | 3.000 Vpp |
-| Stage 2 output at 440 Hz | 3.0 Vpp | — | — | — | 2.980 Vpp |
-| Lower cutoff fL | 5 Hz | — | — | — | — |
-| Upper cutoff fH | 28.54 kHz | — | — | — | — |
+| Stage 1 output at 440 Hz | 3.0 Vpp | n/a | n/a | n/a | 3.000 Vpp |
+| Stage 2 output at 440 Hz | 3.0 Vpp | n/a | n/a | n/a | 2.980 Vpp |
+| Lower cutoff fL | 5 Hz | n/a | n/a | n/a | n/a |
+| Upper cutoff fH | 28.54 kHz | n/a | n/a | n/a | n/a |
 
 Full comparison table with calculated, simulated and measured data across all four test configurations is in `design/calculations/frequency-response-data.xlsx` and in the [full technical report](report/audio-amplifier-report.pdf).
 
@@ -374,17 +374,17 @@ The amplifier passband (5 Hz to 28.54 kHz) covers the full range of human hearin
 
 | Designator | Component | Value / Part | Purpose |
 |---|---|---|---|
-| U1 | Op-amp | TL071CP | Stage 1 — inverting active band-pass filter |
-| U2 | Op-amp | OPA551PA | Stage 2 — unity-gain power buffer |
+| U1 | Op-amp | TL071CP | Stage 1: inverting active band-pass filter |
+| U2 | Op-amp | OPA551PA | Stage 2: unity-gain power buffer |
 | R1 | Resistor | Sets fH with C1 | Upper cutoff high-pass element |
 | R2 | Resistor | Sets fL with C2 | Lower cutoff low-pass element |
 | R3 | Resistor | Voltage divider | Single-supply bias network |
 | R4 | Resistor | Voltage divider | Single-supply bias network |
-| R5 | Resistor | 82 kΩ | Feedback — sets midband gain |
+| R5 | Resistor | 82 kΩ | Feedback resistor, sets midband gain |
 | C1 | Capacitor | Sets fH with R1 | Upper cutoff frequency element |
 | C2 | Capacitor | Sets fL with R2 | Lower cutoff frequency element |
 | D1, D2 | Diode | Protection | Power supply clamping |
-| — | Capacitors | Decoupling | Op-amp supply pin decoupling |
+| n/a | Capacitors | Decoupling | Op-amp supply pin decoupling |
 
 Exact values for R1, R2, C1 and C2 are in `design/calculations/Audio Amplifier Design Calculations.xlsx`. The full BOM with Aston MB252 stock codes is in `design/calculations/audio-amp-design-workbook.xlsx`.
 
