@@ -82,9 +82,11 @@ Frequency response verified across the full audio band on both breadboard and PC
 <p align="center">
   <img src="media/assets/proteus.jpg" alt="Proteus EDA" width="65" title="Proteus">
   &nbsp;&nbsp;
-  <img src="media/assets/github-icon.svg" alt="GitHub" width="65" title="GitHub">
+  <img src="https://techstack-generator.vercel.app/github-icon.svg" alt="GitHub" width="65" title="GitHub">
   &nbsp;&nbsp;
-  <img src="media/assets/git-icon.svg" alt="Git" width="65" title="Git">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" width="65" title="Git">
+  &nbsp;&nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" width="65" title="VS Code">
   &nbsp;&nbsp;
   <img src="media/assets/excel-icon.png" alt="Microsoft Excel" width="65" title="Microsoft Excel">
   &nbsp;&nbsp;
@@ -95,9 +97,22 @@ Frequency response verified across the full audio band on both breadboard and PC
   <b>Proteus</b> &nbsp;&nbsp;&nbsp;&nbsp;
   <b>GitHub</b> &nbsp;&nbsp;&nbsp;&nbsp;
   <b>Git</b> &nbsp;&nbsp;&nbsp;&nbsp;
+  <b>VS Code</b> &nbsp;&nbsp;&nbsp;&nbsp;
   <b>Excel</b> &nbsp;&nbsp;&nbsp;&nbsp;
   <b>Word</b>
 </p>
+
+---
+
+## Equipment
+
+| Tool | Model | Purpose |
+|---|---|---|
+| Oscilloscope | Tektronix TBS1052C | Waveform capture and output verification at 440 Hz |
+| DC power supply | Lab bench PSU | Dual supply and single supply voltage configurations |
+| Soldering iron | - | PCB component assembly and rework |
+| Multimeter | - | Continuity checks and DC voltage measurement |
+| Breadboard | 830-point | Dual supply and single supply circuit prototyping |
 
 ---
 
