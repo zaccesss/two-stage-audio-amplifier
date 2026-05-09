@@ -1,4 +1,4 @@
-# Two-Stage Audio Amplifier — Technical Report
+# Two-Stage Audio Amplifier: Technical Report
 
 **Author:** Isaac Adjei  
 **Date:** March 2026
@@ -57,7 +57,7 @@
 | Figure 13 | Simulated and measured frequency response of Stage 1 on breadboard with dual ±9 V supply |
 | Figure 14 | Simulated and measured frequency response of the complete amplifier on breadboard with single 9 V supply |
 | Figure 15 | Simulated and measured frequency response of the complete amplifier on the PCB |
-| Figure 16 | Time-domain waveforms at 440 Hz — (c) Stage 1 PCB output; (d) Stage 2 PCB output |
+| Figure 16 | Time-domain waveforms at 440 Hz: (c) Stage 1 PCB output; (d) Stage 2 PCB output |
 | Figure 17 | Photographs of the completed printed circuit board assembly |
 | Figure 18 | Full circuit schematic of the two-stage audio amplifier exported from Proteus |
 
@@ -420,7 +420,7 @@ In Figure 16(d), CH1 records an input of 872 mVpp and CH2 records a Stage 2 outp
   <img src="../media/images/Figure16d_PCB_Stage2_440Hz.png" alt="Figure 16d: Stage 2 oscilloscope output at 440 Hz on PCB" width="48%">
 </p>
 
-*Figure 16: Time-domain waveforms at 440 Hz — (c) CH1 868 mVpp input, CH2 3.000 Vpp Stage 1 output on PCB; (d) CH1 872 mVpp input, CH2 2.980 Vpp Stage 2 output on PCB*
+*Figure 16: Time-domain waveforms at 440 Hz: (c) CH1 868 mVpp input, CH2 3.000 Vpp Stage 1 output on PCB; (d) CH1 872 mVpp input, CH2 2.980 Vpp Stage 2 output on PCB*
 
 All four waveforms are clean, undistorted sinusoids at 440 Hz, confirming that both stages operate within their linear range and that the 3 Vpp output voltage target is met.
 
@@ -440,7 +440,7 @@ The completed PCB assembly is presented in Figure 17. The PCB measures 65 mm × 
   <img src="../media/images/Figure17d_PCB_Underside.jpg" alt="Figure 17d: PCB underside with M3 standoffs" width="48%">
 </p>
 
-*Figure 17: Photographs of the completed PCB assembly — (a) top view with all components soldered; (b) complete system connected to the 8 Ω speaker; (c) angled view with LED D1 illuminated; (d) underside showing M3 nylon standoffs and acrylic baseplate*
+*Figure 17: Photographs of the completed PCB assembly: (a) top view with all components soldered; (b) complete system connected to the 8 Ω speaker; (c) angled view with LED D1 illuminated; (d) underside showing M3 nylon standoffs and acrylic baseplate*
 
 ### 4.4 Evaluation and Conclusions
 
@@ -461,9 +461,9 @@ Possible improvements for future iterations:
 
 ## 5. References
 
-[1] Texas Instruments, "TL071 JFET-Input Operational Amplifiers," SLOS080L, Texas Instruments, Dallas, TX, USA, Feb. 2014.
+[1] Texas Instruments, "TL071 JFET-Input Operational Amplifiers," SLOS080L, Texas Instruments, Dallas, TX, USA, Feb. 2014. \[Online\]. Available: [https://www.ti.com/lit/ds/symlink/tl071.pdf](https://www.ti.com/lit/ds/symlink/tl071.pdf)
 
-[2] Texas Instruments, "OPA551 High-Voltage, High-Current Operational Amplifier," SBOS100A, Texas Instruments, Dallas, TX, USA, Jan. 2004.
+[2] Texas Instruments, "OPA551 High-Voltage, High-Current Operational Amplifier," SBOS100A, Texas Instruments, Dallas, TX, USA, Jan. 2004. \[Online\]. Available: [https://www.ti.com/lit/ds/symlink/opa551.pdf](https://www.ti.com/lit/ds/symlink/opa551.pdf)
 
 [3] N. Storey, *Electronics: A Systems Approach*, 6th ed. Harlow: Pearson, 2017.
 
@@ -471,15 +471,15 @@ Possible improvements for future iterations:
 
 [5] P. Scherz and S. Monk, *Practical Electronics for Inventors*, 4th ed. New York, NY, USA: McGraw-Hill, 2016.
 
-[6] H. Zumbahlen, Ed., *Linear Circuit Design Handbook*. Burlington, MA, USA: Newnes/Elsevier, 2008.
+[6] H. Zumbahlen, Ed., *Linear Circuit Design Handbook*. Burlington, MA, USA: Newnes/Elsevier, 2008. \[Online\]. Available: [https://www.analog.com/en/resources/technical-books/linear-circuit-design-handbook.html](https://www.analog.com/en/resources/technical-books/linear-circuit-design-handbook.html)
 
-[7] Texas Instruments, "Handbook of Operational Amplifier Applications," SBOA092B, Texas Instruments, Dallas, TX, USA, Sep. 2016.
+[7] Texas Instruments, "Handbook of Operational Amplifier Applications," SBOA092B, Texas Instruments, Dallas, TX, USA, Sep. 2016. \[Online\]. Available: [https://www.ti.com/lit/an/sboa092b/sboa092b.pdf](https://www.ti.com/lit/an/sboa092b/sboa092b.pdf)
 
 [8] Texas Instruments, "A Single-Supply Op-Amp Circuit Collection," Application Report SLOA058, Texas Instruments, Dallas, TX, USA, Nov. 2000.
 
 [9] R. Mancini, Ed., *Op Amps for Everyone*, Design Guide SLOD006B, Texas Instruments, Dallas, TX, USA, 2002.
 
-[10] Texas Instruments, "Audio Amplifier Design," Application Report SLOA030, Texas Instruments, Dallas, TX, USA, Sep. 1999.
+[10] Texas Instruments, "Audio Amplifier Design," Application Report SLOA030, Texas Instruments, Dallas, TX, USA, Sep. 1999. \[Online\]. Available: [https://www.ti.com/lit/an/sloa030/sloa030.pdf](https://www.ti.com/lit/an/sloa030/sloa030.pdf)
 
 [11] O. Bishop, *Electronics*, 3rd ed. Amsterdam: Newnes/Elsevier, 2003.
 
@@ -512,7 +512,7 @@ Possible improvements for future iterations:
 | Connectors | 1 | J2 | 2-way terminal block | Speaker output |
 | Mechanical | 1 | LS1 | 8 Ω speaker | Audio output load |
 | Mechanical | 1 | SW1 | SPST slide switch | Power switch |
-| Test points | 5 | TP1–TP5 | Test pins | Virtual ground, Stage 1 output, power, GND and general |
+| Test points | 5 | TP1 to TP5 | Test pins | Virtual ground, Stage 1 output, power, GND and general |
 
 ---
 

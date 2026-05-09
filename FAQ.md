@@ -70,7 +70,7 @@ Any version of Microsoft Excel or a compatible spreadsheet application. The work
 
 **Where is the full technical report?**
 
-The complete technical report is at [report/audio-amplifier-report.pdf](report/audio-amplifier-report.pdf). It covers all design sections, simulation results and measured data with IEEE referencing.
+The complete technical report is at [report/REPORT.md](report/REPORT.md). It covers all design sections, simulation results and measured data with IEEE referencing.
 
 **Where can I see all the project photos?**
 
