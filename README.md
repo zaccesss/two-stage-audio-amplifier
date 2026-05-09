@@ -108,11 +108,12 @@ Frequency response verified across the full audio band on both breadboard and PC
 
 | Tool | Model | Purpose |
 |---|---|---|
-| Oscilloscope | Tektronix TBS1052C | Waveform capture and output verification at 440 Hz |
-| DC power supply | Lab bench PSU | Dual supply and single supply voltage configurations |
-| Soldering iron | - | PCB component assembly and rework |
-| Multimeter | - | Continuity checks and DC voltage measurement |
+| Oscilloscope | Tektronix TBS1052C | Waveform capture and peak-to-peak voltage measurement |
+| Function generator | Hameg HM8030 | Generating sine wave test signals for frequency response measurements |
+| Audio source | iPhone 14 Pro Max | 440 Hz sine wave input for amplifier characterisation and testing |
+| DC power supply | Dual-output bench PSU | Providing split supply (±15 V) for breadboard op-amp testing |
 | Breadboard | 830-point | Dual supply and single supply circuit prototyping |
+| Soldering iron | - | PCB component assembly and rework |
 
 ---
 
