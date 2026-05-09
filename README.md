@@ -30,7 +30,7 @@ A two-stage audio amplifier designed to take a line-level audio input from a mob
   <a href="DOCUMENTATION.md">📖 Documentation</a> &nbsp;•&nbsp;
   <a href="FAQ.md">❓ FAQ</a> &nbsp;•&nbsp;
   <a href="media/GALLERY.md">🖼️ Gallery</a> &nbsp;•&nbsp;
-  <a href="report/audio-amplifier-report.pdf">📄 Full Report</a> &nbsp;•&nbsp;
+  <a href="report/REPORT.md">📄 Full Report</a> &nbsp;•&nbsp;
   <a href="CONTRIBUTING.md">🤝 Contributing</a>
 </p>
 
@@ -123,7 +123,6 @@ Frequency response verified across the full audio band on both breadboard and PC
 ```
 two-stage-audio-amplifier/
 ├── design/
-│   ├── calculations/       Design calculation workbooks and frequency response data
 │   └── proteus/
 │       └── exports/        Schematic, PCB layout and simulation exports (PNG)
 ├── media/
@@ -131,7 +130,7 @@ two-stage-audio-amplifier/
 │   ├── block-diagrams/     System block diagrams and design flowcharts
 │   └── GALLERY.md          Curated image gallery with descriptions
 ├── report/
-│   └── audio-amplifier-report.pdf   Full technical report
+│   └── REPORT.md           Full technical report in markdown
 ├── DOCUMENTATION.md        Complete technical reference
 ├── CONTRIBUTING.md         Commit and workflow standards
 └── LICENSE                 MIT
