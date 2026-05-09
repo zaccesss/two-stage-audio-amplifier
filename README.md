@@ -82,13 +82,13 @@ Frequency response verified across the full audio band on both breadboard and PC
 <p align="center">
   <img src="media/assets/proteus.jpg" alt="Proteus EDA" width="65" title="Proteus">
   &nbsp;&nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="65" title="GitHub">
+  <img src="media/assets/github-icon.svg" alt="GitHub" width="65" title="GitHub">
   &nbsp;&nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" width="65" title="Git">
+  <img src="media/assets/git-icon.svg" alt="Git" width="65" title="Git">
   &nbsp;&nbsp;
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg/512px-Microsoft_Office_Excel_%282019%E2%80%93present%29.svg.png" alt="Microsoft Excel" width="65" title="Microsoft Excel">
+  <img src="media/assets/excel-icon.png" alt="Microsoft Excel" width="65" title="Microsoft Excel">
   &nbsp;&nbsp;
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Microsoft_Office_Word_%282019%E2%80%93present%29.svg/512px-Microsoft_Office_Word_%282019%E2%80%93present%29.svg.png" alt="Microsoft Word" width="65" title="Microsoft Word">
+  <img src="media/assets/word-icon.png" alt="Microsoft Word" width="65" title="Microsoft Word">
 </p>
 
 <p align="center">
