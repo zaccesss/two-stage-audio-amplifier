@@ -12,7 +12,7 @@
   <!-- Boundary label -->
   <text x="600" y="62" text-anchor="middle"
         font-size="15" font-weight="bold" fill="#7F7F7F"
-        letter-spacing="1">Audio Amplifier System – EI1EL2</text>
+      letter-spacing="1">Audio Amplifier System - EI1EL2</text>
 
   <!-- ═══════════════════════════════════════════════════════════
        POWER SYSTEM (TOP CENTRE)
@@ -46,7 +46,7 @@
   <polygon points="870,120 878,124 870,128" fill="#404040"/>
 
   <!-- +V Rail label -->
-  <text x="884" y="120" font-size="10" fill="#404040" font-weight="bold">+V (9–12V)</text>
+      <text x="884" y="120" font-size="10" fill="#404040" font-weight="bold">+V (9-12V)</text>
 
   <!-- Vertical +V rail going down to ICs -->
   <!-- Rail line from top to TL071 power pin -->
@@ -137,7 +137,7 @@
   <text x="376" y="364" text-anchor="middle"
         font-size="10" font-weight="bold" fill="#BDD7EE">Gain ≈ 3.42 V/V</text>
   <text x="376" y="377" text-anchor="middle"
-        font-size="9" fill="#BDD7EE">Band-pass: 6.6 Hz – 28.5 kHz</text>
+        font-size="9" fill="#BDD7EE">Band-pass: 6.6 Hz - 28.5 kHz</text>
 
   <!-- Signal arrow: TL071 → OPA551 -->
   <line x1="478" y1="332" x2="534" y2="332"
@@ -241,7 +241,7 @@
         font-size="9" fill="#888888" font-style="italic">Output Load</text>
 
   <!-- ═══════════════════════════════════════════════════════════
-       POWER FLOW ARROWS (from rails down to blocks — labelled)
+        POWER FLOW ARROWS (from rails down to blocks - labelled)
   ═══════════════════════════════════════════════════════════ -->
   <!-- +V label at TL071 -->
   <text x="655" y="253" font-size="9" fill="#ED7D31" font-weight="bold">+V</text>
@@ -257,7 +257,7 @@
   ═══════════════════════════════════════════════════════════ -->
   <text x="600" y="620" text-anchor="middle"
         font-size="10" fill="#888888">
-    — — — — — — ▶  Signal Flow (left → right)
+      - - - - - - ▶  Signal Flow (left → right)
   </text>
   <line x1="400" y1="630" x2="800" y2="630"
         stroke="#404040" stroke-width="2" stroke-dasharray="6,3"
@@ -285,7 +285,7 @@
   </text>
   <text x="60" y="746"
         font-size="9" fill="#CCCCCC" font-style="italic">
-    Fig. 1 — Top-Level System Block Diagram
+      Fig. 1 - Top-Level System Block Diagram
   </text>
 
 </svg>

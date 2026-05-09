@@ -317,7 +317,7 @@ The first stage is implemented using U1, a TL071CP configured as an inverting su
 
 Feedback resistor R1 (82 kΩ) is connected between output pin 6 and inverting input pin 2 of U1, with the voltage gain determined by the ratio of R1 to R2 as shown in Equation 9, giving 3.42 V/V or 10.67 dB. Capacitor C1 (68 pF) is connected in parallel with R1, with the upper cut-off frequency determined by R1 and C1 as calculated in Equation 13, giving fH = 28,542 Hz. The lower cut-off frequency is determined by R2 and C2 as calculated in Equation 11, giving fL = 6.63 Hz.
 
-Single-supply operation is achieved by biasing pin 3 of U1 to half the supply voltage via the potential divider formed by R3 and R4, each of 24 kΩ, giving approximately 4.5 V on a 9 V supply. Power supply decoupling capacitors C3 and C4 (100 nF ceramic each) are placed close to the supply pins of U1, and C7 (100 nF) provides equivalent decoupling at U2. C5 (10 µF electrolytic) is a bulk decoupling capacitor at U2, suppressing lower-frequency noise and providing a local charge reservoir for the transient current demands of the OPA551PA [2].
+Single-supply operation is achieved by biasing pin 3 of U1 to half the supply voltage via the potential divider formed by R3 and R4, each of 24 kΩ, giving approximately 4.5 V on a 9 V supply. Power supply decoupling capacitors C3 and C4 (100 nF ceramic each) are placed close to the supply pins of U1. C7 (100 nF) provides equivalent decoupling at U2. C5 (10 µF electrolytic) is a bulk decoupling capacitor at U2, suppressing lower-frequency noise and providing a local charge reservoir for the transient current demands of the OPA551PA [2].
 
 The second stage uses U2, an OPA551PA configured as a unity-gain voltage follower with its output connected directly to its inverting input. The output coupling capacitor C8 (2200 µF) is connected in series between pin 6 of U2 and the speaker output terminal LS1. This blocks the DC bias voltage from the speaker load, which would otherwise waste power and potentially damage the voice coil.
 
@@ -375,7 +375,7 @@ For the dual-supply breadboard measurement, the first stage was powered from a d
 
 ### 4.1 Breadboard Prototype Testing
 
-The frequency response of the first amplifier stage was measured on breadboard with a dual ±9 V power supply. The simulated and measured results are shown in Figure 13. The simulated and measured midband gain at 440 Hz were both 10.67 dB, demonstrating exact agreement. The simulated lower cut-off frequency was 6.6 Hz, and the measured value was approximately 7.2 Hz, in close agreement with the calculated value of 6.63 Hz. The simulated upper cut-off frequency was 27.7 kHz, and the measured value was approximately 26.0 kHz. The small discrepancy between simulated and measured cut-off frequencies is attributable to component tolerances.
+The frequency response of the first amplifier stage was measured on breadboard with a dual ±9 V power supply. The simulated and measured results are shown in Figure 13. The simulated and measured midband gain at 440 Hz were both 10.67 dB, demonstrating exact agreement. The simulated lower cut-off frequency was 6.6 Hz and the measured value was approximately 7.2 Hz, in close agreement with the calculated value of 6.63 Hz. The simulated upper cut-off frequency was 27.7 kHz and the measured value was approximately 26.0 kHz. The small discrepancy between simulated and measured cut-off frequencies is attributable to component tolerances.
 
 ![Figure 13: Simulated and measured frequency response of the first amplifier stage on breadboard with dual ±9 V power supply](../media/images/Figure13_DualSupply_Breadboard.png)
 
@@ -389,7 +389,7 @@ Figure 14 shows the simulated and measured frequency response of the complete am
 
 ### 4.2 PCB Testing
 
-The PCB was tested in two stages. Prior to fitting any integrated circuits, a multimeter was used to confirm that the virtual ground bias voltage of approximately 4.5 V was present at the non-inverting input pin 3 of U1. U1 was then fitted and a full frequency sweep from 1 Hz to 100 kHz was performed at the Stage 1 output at pin 6 of U1. U2 was then fitted without load resistor R7, and the 440 Hz output was verified at 3 Vpp with no clipping observed. Load resistor R7 (8.2 Ω) was then connected and a second full frequency sweep was performed at the Stage 2 output.
+The PCB was tested in two stages. Prior to fitting any integrated circuits, a multimeter was used to confirm that the virtual ground bias voltage of approximately 4.5 V was present at the non-inverting input pin 3 of U1. U1 was then fitted and a full frequency sweep from 1 Hz to 100 kHz was performed at the Stage 1 output at pin 6 of U1. U2 was then fitted without load resistor R7 and the 440 Hz output was verified at 3 Vpp with no clipping observed. Load resistor R7 (8.2 Ω) was then connected and a second full frequency sweep was performed at the Stage 2 output.
 
 The simulated and measured results for both stages are shown in Figure 15.
 
@@ -446,7 +446,7 @@ The completed PCB assembly is presented in Figure 17. The PCB measures 65 mm × 
 
 The design met all key performance targets across simulation and hardware testing. The voltage gain was consistent throughout, measuring approximately 10.58 dB on the dual-supply breadboard, 10.81 dB on the single-supply breadboard, 10.77 dB on PCB Stage 1 and 10.67 dB on PCB Stage 2, all within 0.14 dB of the calculated value of 10.67 dB. The 3 Vpp output target was met, with Stage 2 delivering 2.980 Vpp at 440 Hz on the PCB, representing agreement to within 0.67% of the design target.
 
-The upper cut-off frequency showed close agreement across all conditions, with the PCB Stage 1 measurement of approximately 29.5 kHz and PCB Stage 2 measurement of approximately 30.0 kHz both consistent with the calculated value of 28.54 kHz, the small upward shift being attributable to the negative tolerance of C1 within its ±20% tolerance. The lower cut-off frequency of approximately 6.9 Hz on PCB Stage 1 agreed with the calculated value of 6.63 Hz to within 4.1%. All measured waveforms at 440 Hz were undistorted sinusoids, confirming linear operation throughout, and the phase inversion of 180° is consistent with the inverting amplifier topology of U1.
+The upper cut-off frequency showed close agreement across all conditions, with the PCB Stage 1 measurement of approximately 29.5 kHz and PCB Stage 2 measurement of approximately 30.0 kHz both consistent with the calculated value of 28.54 kHz, the small upward shift being attributable to the negative tolerance of C1 within its ±20% tolerance. The lower cut-off frequency of approximately 6.9 Hz on PCB Stage 1 agreed with the calculated value of 6.63 Hz to within 4.1%. All measured waveforms at 440 Hz were undistorted sinusoids, confirming linear operation throughout and the phase inversion of 180° is consistent with the inverting amplifier topology of U1.
 
 At the design output power of 281 mW delivered to the 8 Ω load, the OPA551 U2 operates well within its maximum continuous power dissipation rating and no thermal management measures were required [2].
 
