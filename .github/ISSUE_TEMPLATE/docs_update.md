@@ -11,7 +11,7 @@ Which document or section needs updating?
 
 ## Why
 
-What is incorrect or missing, and why does it matter?
+What is incorrect or missing and why does it matter?
 
 ## Acceptance criteria
 

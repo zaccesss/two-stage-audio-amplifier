@@ -106,7 +106,7 @@ The iPhone 14 Pro Max was measured at 440 Hz across all 16 volume steps to estab
 
 The design input was set at **70% of the maximum measured output** (1.224 Vpp × 0.70 = 0.857 Vpp). This provides headroom to prevent clipping under normal listening conditions. Volume step 15 produced **0.872 Vpp**, the closest available discrete step to the 70% target (1.77% error). This value was adopted as the design input voltage for all subsequent calculations.
 
-The volume scale is not linear: output increases slowly at low steps and rises sharply at higher steps. Because of this the 70% design point cannot be matched exactly — the closest step is chosen and the resulting error quantified.
+The volume scale is not linear: output increases slowly at low steps and rises sharply at higher steps. Because of this the 70% design point cannot be matched exactly - the closest step is chosen and the resulting error quantified.
 
 > See [report/JOURNAL.md](report/JOURNAL.md#3-source-characterisation) for the full measured voltage table across all 16 volume steps.
 
