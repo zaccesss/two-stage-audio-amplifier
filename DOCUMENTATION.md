@@ -2,7 +2,7 @@
 
 Full technical reference for the two-stage audio amplifier project. Covers system architecture, stage-by-stage design, simulation, PCB layout, build process, measured results and bill of materials.
 
-> Back to [README.md](README.md) &nbsp;|&nbsp; [media/GALLERY.md](media/GALLERY.md) &nbsp;|&nbsp; [report/audio-amplifier-report.pdf](report/audio-amplifier-report.pdf)
+> Back to [README.md](README.md) &nbsp;|&nbsp; [media/GALLERY.md](media/GALLERY.md) &nbsp;|&nbsp; [report/REPORT.md](report/REPORT.md)
 
 ---
 
@@ -77,7 +77,7 @@ two-stage-audio-amplifier/
 │   └── GALLERY.md                  Curated image gallery
 │
 └── report/
-    └── audio-amplifier-report.pdf  Full technical report (PDF)
+    └── REPORT.md                   Full technical report in markdown
 ```
 
 ---
@@ -354,7 +354,7 @@ Measurements were taken at 440 Hz using a TBS1052C oscilloscope. A 470 nF capaci
 | Lower cutoff fL | 5 Hz | n/a | n/a | n/a | n/a |
 | Upper cutoff fH | 28.54 kHz | n/a | n/a | n/a | n/a |
 
-Full comparison table with calculated, simulated and measured data across all four test configurations is in `design/calculations/frequency-response-data.xlsx` and in the [full technical report](report/audio-amplifier-report.pdf).
+The full comparison table with calculated, simulated and measured data across all four test configurations is in the [full technical report](report/REPORT.md#42-pcb-testing).
 
 ### 11.3 Frequency Response
 
