@@ -31,6 +31,7 @@ A two-stage audio amplifier designed to take a line-level audio input from a mob
   <a href="FAQ.md">❓ FAQ</a> &nbsp;•&nbsp;
   <a href="media/GALLERY.md">🖼️ Gallery</a> &nbsp;•&nbsp;
   <a href="report/REPORT.md">📄 Full Report</a> &nbsp;•&nbsp;
+  <a href="report/JOURNAL.md">📓 Journal</a> &nbsp;•&nbsp;
   <a href="CONTRIBUTING.md">🤝 Contributing</a>
 </p>
 
