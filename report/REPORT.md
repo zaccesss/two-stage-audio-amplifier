@@ -38,6 +38,31 @@
 
 ---
 
+## Table of Figures
+
+| Figure | Caption |
+|---|---|
+| Figure 1 | Frequency response of an ideal band-pass filter [3, 4] |
+| Figure 2 | Active band-pass filter circuit [3, 4] |
+| Figure 3 | Comparison of passive and active band-pass filter frequency responses [3] |
+| Figure 4 | Pin configuration of the TL071 operational amplifier [1] |
+| Figure 5 | Pin configuration of the OPA551 operational amplifier [2] |
+| Figure 6 | Top-level block diagram of the two-stage audio amplifier system |
+| Figure 7 | iPhone 14 Pro Max output voltage versus volume step at 440 Hz |
+| Figure 8 | TL071CP active band-pass filter stage sub-circuit (see Figure 18) |
+| Figure 9 | OPA551PA unity-gain buffer output stage sub-circuit (see Figure 18) |
+| Figure 10 | PCB top layer showing component placement and silk screen |
+| Figure 11 | PCB bottom layer showing copper track routing and ground plane |
+| Figure 12 | Three-dimensional model of the PCB |
+| Figure 13 | Simulated and measured frequency response of Stage 1 on breadboard with dual ±9 V supply |
+| Figure 14 | Simulated and measured frequency response of the complete amplifier on breadboard with single 9 V supply |
+| Figure 15 | Simulated and measured frequency response of the complete amplifier on the PCB |
+| Figure 16 | Time-domain waveforms at 440 Hz — (c) Stage 1 PCB output; (d) Stage 2 PCB output |
+| Figure 17 | Photographs of the completed printed circuit board assembly |
+| Figure 18 | Full circuit schematic of the two-stage audio amplifier exported from Proteus |
+
+---
+
 ## Abstract
 
 This report describes the design, simulation, testing and implementation of a two-stage audio amplifier optimised for an iPhone 14 Pro Max with a 0.872 Vpp input. A TL071 (Stage 1) performs stereo-to-mono summing, provides 10.67 dB gain and achieves a passband from 6.63 Hz to 28.54 kHz. An OPA551 (Stage 2) drives an 8 Ω speaker at 3 Vpp from a 9 V to 12 V single supply. The amplifier is implemented on a PCB mounted on an acrylic baseplate.
@@ -64,6 +89,8 @@ Consumer audio devices produce stereo audio output consisting of two independent
 
 ![Human hearing range reference](../media/images/human_hearing_range.png)
 
+*Human hearing range showing the audible frequency spectrum from 20 Hz to 20 kHz [3, 11, 12]*
+
 ### 2.2 Active Band-Pass Filters
 
 A band-pass filter passes signals between a lower cut-off frequency fL and an upper cut-off frequency fH whilst attenuating all frequencies outside that range [3]. The frequency response of an ideal band-pass filter is shown in Figure 1. The two cut-off frequencies are defined as the points at which the output signal power falls to half of its maximum value, corresponding to a reduction in voltage gain of 3 dB below the maximum passband gain [4].
@@ -77,6 +104,8 @@ BW = fH - fL                                                             (1)
 where BW is the bandwidth in Hz, fH is the upper cut-off frequency in Hz and fL is the lower cut-off frequency in Hz.
 
 ![Figure 1: Frequency response of an ideal band-pass filter](../media/images/Figure1_BPF.png)
+
+*Figure 1: Frequency response of an ideal band-pass filter [3, 4]*
 
 A passive band-pass filter constructed using only resistors and capacitors attenuates the signal within the passband as well as outside it, resulting in a voltage gain of less than unity [3]. An active band-pass filter incorporates an operational amplifier, which provides gain within the passband and allows the overall voltage gain to be set to a value greater than unity [6]. The operational amplifier also provides a low output impedance, isolating the filter from the load and preventing the load from affecting the frequency response [4].
 
@@ -108,13 +137,19 @@ where Av is the voltage gain and the negative sign indicates phase inversion at 
 
 ![Figure 2: Active band-pass filter circuit](../media/images/Figure2_BPF_Circuit.png)
 
+*Figure 2: Active band-pass filter circuit [3, 4]*
+
 ![Figure 3: Comparison of passive and active band-pass filter frequency responses](../media/images/Figure3_PassiveVsActive.png)
+
+*Figure 3: Comparison of passive and active band-pass filter frequency responses [3]*
 
 ### 2.3 The TL071 Operational Amplifier
 
 The TL071 is a general-purpose JFET-input operational amplifier [1]. The JFET input stage provides a high input impedance and an extremely low input bias current, minimising the loading effect on preceding signal sources [1]. The device is unity-gain stable and has a gain-bandwidth product of approximately 3 MHz and a slew rate of 13 V/µs [1]. The low input noise of 18 nV/√Hz and total harmonic distortion of 0.003% are important parameters for high-fidelity audio reproduction [1]. The TL071 operates from a supply voltage range of ±2.25 V to ±18 V, making it suitable for both dual-supply and single-supply configurations [1].
 
 ![Figure 4: TL071 pinout diagram](../media/images/TL071_pinout_diagram.png)
+
+*Figure 4: Pin configuration of the TL071 operational amplifier [1]*
 
 ### 2.4 The TL071 as an Inverting Summing Active Band-Pass Filter
 
@@ -127,6 +162,8 @@ The frequency-selective behaviour is achieved by incorporating RC networks at bo
 The OPA551 is a high-voltage, high-current operational amplifier designed for applications requiring large output current capability [2]. It can supply a continuous output current of up to ±200 mA, making it suitable for directly driving low-impedance loads such as loudspeakers without an additional discrete output stage [2]. The OPA551 has a gain-bandwidth product of 3 MHz and a slew rate of ±15 V/µs [2]. The device is unity-gain stable and operates from a supply voltage range of ±4 V to ±30 V [2].
 
 ![Figure 5: OPA551 pinout diagram](../media/images/OPA551_pinout_diagram.png)
+
+*Figure 5: Pin configuration of the OPA551 operational amplifier [2]*
 
 ### 2.6 The OPA551 as a Unity-Gain Voltage Follower
 
@@ -181,11 +218,15 @@ The first stage (TL071) combines the left and right stereo channels into a singl
 
 ![Figure 6: Top-level block diagram of the two-stage audio amplifier system](../media/block-diagrams/Main-AudioAmp-Block-Diagram.png)
 
+*Figure 6: Top-level block diagram of the two-stage audio amplifier system*
+
 ### 3.3 Design Calculations
 
 The iPhone 14 Pro Max was characterised by measuring the output voltage at 440 Hz across all 16 volume steps. A frequency of 440 Hz was selected as it corresponds to the international standard musical pitch A4, providing a consistent and reproducible test signal [3]. The design input level was selected at 70% of the maximum measured output of 1.224 Vpp, giving a target of 0.857 Vpp. Volume step 15 of 16 produced an output of 0.872 Vpp, representing an error of 1.77% from the 70% target. This value was adopted as the design input voltage.
 
 ![Figure 7: iPhone 14 Pro Max output voltage versus volume step at 440 Hz](../media/images/Phone%20characterisation%20graph.png)
+
+*Figure 7: iPhone 14 Pro Max output voltage versus volume step at 440 Hz*
 
 **Voltage gain:**
 
@@ -286,6 +327,8 @@ The power indicator LED D1 is connected in series with R6 (3.3 kΩ) between the 
 
 In the Proteus simulation environment, the loudspeaker LS1 is replaced by a fixed resistor R7 (8.2 Ω) as the simulation load, as Proteus does not accurately model the frequency-dependent impedance of a real loudspeaker.
 
+> **Figure 8** (TL071CP active band-pass filter stage sub-circuit) and **Figure 9** (OPA551PA unity-gain buffer output stage sub-circuit) show the individual stage schematics. Both stages are visible in the full circuit schematic in [Appendix B (Figure 18)](#appendix-b-full-circuit-schematic).
+
 ### 3.5 PCB Design
 
 The printed circuit board was designed in Proteus PCB Layout with overall dimensions of 65 mm × 40 mm, as shown in Figures 10 and 11. Component placement followed the principle of signal flow from left to right, with the audio input jack socket J1 on the left edge, the power supply terminal block on the top right edge and the speaker output on the bottom right edge. The power switch SW1 and LED indicator D1 are positioned along the top edge for easy user access.
@@ -298,7 +341,11 @@ The PCB design was verified using the Proteus Design Rule Check, which returned 
 
 ![Figure 10: PCB top layer showing component placement and silk screen](../media/images/Figure10_PCB_Top.png)
 
+*Figure 10: PCB top layer showing component placement and silk screen*
+
 ![Figure 11: PCB bottom layer showing copper track routing and ground plane](../media/images/Figure11_PCB_Bottom.png)
+
+*Figure 11: PCB bottom layer showing copper track routing and ground plane*
 
 ### 3.6 3D Model
 
@@ -316,6 +363,8 @@ A three-dimensional visualisation of the PCB was generated using the Proteus 3D 
   <img src="../media/images/Figure12_3D_Model(3).png" alt="3D model rear view" width="45%">
 </p>
 
+*Figure 12: Three-dimensional model of the PCB generated in Proteus 3D Visualiser*
+
 ---
 
 ## 4. Results
@@ -330,9 +379,13 @@ The frequency response of the first amplifier stage was measured on breadboard w
 
 ![Figure 13: Simulated and measured frequency response of the first amplifier stage on breadboard with dual ±9 V power supply](../media/images/Figure13_DualSupply_Breadboard.png)
 
+*Figure 13: Simulated and measured frequency response of Stage 1 on breadboard with dual ±9 V power supply*
+
 Figure 14 shows the simulated and measured frequency response of the complete amplifier on breadboard with a single 9 V power supply. The measured midband gain at 440 Hz was 10.78 dB, in close agreement with the calculated value of 10.67 dB. The measured lower cut-off frequency was approximately 6.8 Hz and the measured upper cut-off frequency was approximately 27.1 kHz.
 
 ![Figure 14: Simulated and measured frequency response of the complete two-stage amplifier on breadboard with single 9 V power supply](../media/images/Figure14_SingleSupply_Breadboard.png)
+
+*Figure 14: Simulated and measured frequency response of the complete two-stage amplifier on breadboard with single 9 V power supply*
 
 ### 4.2 PCB Testing
 
@@ -341,6 +394,8 @@ The PCB was tested in two stages. Prior to fitting any integrated circuits, a mu
 The simulated and measured results for both stages are shown in Figure 15.
 
 ![Figure 15: Simulated and measured frequency response of the complete two-stage amplifier on the PCB](../media/images/Figure15_PCB_FreqResponse.png)
+
+*Figure 15: Simulated and measured frequency response of the complete two-stage amplifier on the PCB*
 
 **Table 2: Comparison of calculated, simulated and measured amplifier performance parameters**
 
@@ -365,6 +420,8 @@ In Figure 16(d), CH1 records an input of 872 mVpp and CH2 records a Stage 2 outp
   <img src="../media/images/Figure16d_PCB_Stage2_440Hz.png" alt="Figure 16d: Stage 2 oscilloscope output at 440 Hz on PCB" width="48%">
 </p>
 
+*Figure 16: Time-domain waveforms at 440 Hz — (c) CH1 868 mVpp input, CH2 3.000 Vpp Stage 1 output on PCB; (d) CH1 872 mVpp input, CH2 2.980 Vpp Stage 2 output on PCB*
+
 All four waveforms are clean, undistorted sinusoids at 440 Hz, confirming that both stages operate within their linear range and that the 3 Vpp output voltage target is met.
 
 ### 4.3 Final Assembly
@@ -382,6 +439,8 @@ The completed PCB assembly is presented in Figure 17. The PCB measures 65 mm × 
   &nbsp;
   <img src="../media/images/Figure17d_PCB_Underside.jpg" alt="Figure 17d: PCB underside with M3 standoffs" width="48%">
 </p>
+
+*Figure 17: Photographs of the completed PCB assembly — (a) top view with all components soldered; (b) complete system connected to the 8 Ω speaker; (c) angled view with LED D1 illuminated; (d) underside showing M3 nylon standoffs and acrylic baseplate*
 
 ### 4.4 Evaluation and Conclusions
 
@@ -462,3 +521,5 @@ Possible improvements for future iterations:
 The full circuit schematic for the two-stage audio amplifier is presented below. The schematic was exported from Proteus and shows the complete circuit including all biasing, coupling, decoupling and protection components.
 
 ![Figure 18: Full circuit schematic of the two-stage audio amplifier](../design/proteus/exports/schematic.png)
+
+*Figure 18: Full circuit schematic of the two-stage audio amplifier exported from Proteus*
