@@ -113,6 +113,7 @@ Frequency response verified across the full audio band on both breadboard and PC
 | Audio source | iPhone 14 Pro Max | 440 Hz sine wave input for amplifier characterisation and testing |
 | DC power supply | Dual-output bench PSU | Providing split supply (±15 V) for breadboard op-amp testing |
 | Breadboard | 830-point | Dual supply and single supply circuit prototyping |
+| Multimeter | - | Verifying virtual ground bias voltage before fitting ICs |
 | Soldering iron | - | PCB component assembly and rework |
 
 ---
