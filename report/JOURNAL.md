@@ -33,25 +33,25 @@
 
 The project brief was a single paragraph that I broke down into eight requirements:
 
-1. **Power** — must run from a 12 V DC supply or 9 V PP3 battery. This forces single-supply design rather than the ±15 V bench supply used in labs.
-2. **Mechanical** — amplifier, power source and speaker must be securely mounted on a base plate.
-3. **User controls** — an on/off switch and a power indicator LED are required.
-4. **Stage 1 (TL071)** — use a TL071 to sum stereo left and right channels into mono and implement an active band-pass filter with assigned cut-off frequencies.
-5. **Stage 2 (OPA551)** — use an OPA551 to drive an 8 Ω speaker by providing the required output current.
-6. **Provided items** — one set of components and the base mount provided at no charge.
-7. **Optional extras** — additional items such as a speaker enclosure permitted at own cost.
-8. **Ownership** — the device is kept after marking, so it was worth building it well.
+1. **Power** - must run from a 12 V DC supply or 9 V PP3 battery. This forces single-supply design rather than the ±15 V bench supply used in labs.
+2. **Mechanical** - amplifier, power source and speaker must be securely mounted on a base plate.
+3. **User controls** - an on/off switch and a power indicator LED are required.
+4. **Stage 1 (TL071)** - use a TL071 to sum stereo left and right channels into mono and implement an active band-pass filter with assigned cut-off frequencies.
+5. **Stage 2 (OPA551)** - use an OPA551 to drive an 8 Ω speaker by providing the required output current.
+6. **Provided items** - one set of components and the base mount provided at no charge.
+7. **Optional extras** - additional items such as a speaker enclosure permitted at own cost.
+8. **Ownership** - the device is kept after marking, so it was worth building it well.
 
 Each student was assigned different values. My assigned values:
 - Lower cut-off frequency (fL): 5 Hz
 - Feedback resistor R1: 82 kΩ (given fixed value)
-- Upper cut-off frequency (fH): selected within permitted range — chose 29 kHz
+- Upper cut-off frequency (fH): selected within permitted range - chose 29 kHz
 
 ---
 
 ## 2. Planning
 
-Project window: **19 January 2026 to 20 February 2026** — report submitted **5 March 2026** (eleven days early).
+Project window: **19 January 2026 to 20 February 2026** - report submitted **5 March 2026** (eleven days early).
 
 The project was broken into the following tasks and milestones:
 
@@ -80,7 +80,7 @@ The project was broken into the following tasks and milestones:
 
 Key planning notes:
 - Lock in the power plan early (9 V vs 12 V), then choose switch, LED resistor and connector to match.
-- Treat decoupling as non-negotiable — 100 nF right next to each op-amp supply pin — to avoid oscillation.
+- Treat decoupling as non-negotiable - 100 nF right next to each op-amp supply pin - to avoid oscillation.
 - Use an 8 Ω speaker in an enclosure if possible for the biggest improvement in perceived audio quality.
 - Run one AC sweep and one 440 Hz transient in Proteus for each major design change, then export to Excel for the report.
 - Photograph each build stage so the report is easy to write.
@@ -89,7 +89,7 @@ Key planning notes:
 
 ## 3. Source Characterisation
 
-Before any calculations, the iPhone 14 Pro Max was characterised at 440 Hz (the international standard musical pitch A4 — chosen for consistency and reproducibility). The peak-to-peak output voltage was measured at each of the 16 volume steps using a Tektronix TBS1052C oscilloscope.
+Before any calculations, the iPhone 14 Pro Max was characterised at 440 Hz (the international standard musical pitch A4 - chosen for consistency and reproducibility). The peak-to-peak output voltage was measured at each of the 16 volume steps using a Tektronix TBS1052C oscilloscope.
 
 | Volume step | Measured Vpp |
 |---|---|
@@ -108,7 +108,7 @@ Before any calculations, the iPhone 14 Pro Max was characterised at 440 Hz (the 
 
 The volume scale is not linear: voltage increases slowly at low steps and rises sharply at higher steps.
 
-**Design point selection:** the input level was set at 70% of the maximum measured output, giving a target of 0.7 × 1.224 V = 0.857 Vpp. This provides headroom to avoid clipping under normal listening conditions. Volume step 15 produced 0.872 Vpp — the closest available step to the 70% target, with a 1.77% error.
+**Design point selection:** the input level was set at 70% of the maximum measured output, giving a target of 0.7 × 1.224 V = 0.857 Vpp. This provides headroom to avoid clipping under normal listening conditions. Volume step 15 produced 0.872 Vpp - the closest available step to the 70% target, with a 1.77% error.
 
 **Chosen design input: 0.872 Vpp at 440 Hz (volume step 15 of 16).**
 
@@ -146,7 +146,7 @@ P = 3² / (8 × 8) = 281 mW into 8 Ω
 
 **Bias network:**
 - R3 = R4 = 24 kΩ (voltage divider sets Vcc/2 = ~4.5 V on 9 V supply)
-- C8 = 2200 µF output coupling (fC = 9.05 Hz with 8 Ω load — well below audible range)
+- C8 = 2200 µF output coupling (fC = 9.05 Hz with 8 Ω load - well below audible range)
 
 ---
 
@@ -185,7 +185,7 @@ After dual-supply verification the circuit was adapted for single-supply operati
 - R3 and R4 (24 kΩ each) added as a voltage divider to bias pin 3 of U1 to Vcc/2 = ~4.5 V.
 - C2 and C6 (1 µF each) AC-couple the input signal, blocking DC bias.
 - C8 (2200 µF) AC-couples the output, blocking DC bias from the speaker.
-- A 470 nF external capacitor was used during oscilloscope measurements to remove the 4.5 V DC offset from the output — essential for clean waveform display.
+- A 470 nF external capacitor was used during oscilloscope measurements to remove the 4.5 V DC offset from the output - essential for clean waveform display.
 
 Single-supply breadboard results at 440 Hz:
 - Midband gain: ~10.81 dB
@@ -201,9 +201,9 @@ PCB designed in Proteus PCB Layout. Dimensions: 65 mm × 40 mm, two copper layer
 Key design decisions:
 - Signal flow left to right: J1 (audio input) on left edge, J2 (speaker) on right edge.
 - U1 and U2 centred with U1 to the left of U2, matching signal flow.
-- C3 and C7 (100 nF decoupling) placed immediately adjacent to the IC supply pins — every millimetre of extra track introduces parasitic inductance that degrades decoupling.
+- C3 and C7 (100 nF decoupling) placed immediately adjacent to the IC supply pins - every millimetre of extra track introduces parasitic inductance that degrades decoupling.
 - Signal tracks T30 (0.762 mm), power tracks T40 (1.016 mm).
-- Mitred corners on all track junctions — 90° bends concentrate current density and can radiate interference.
+- Mitred corners on all track junctions - 90° bends concentrate current density and can radiate interference.
 - Full copper pour on bottom layer as a ground plane, reducing ground return impedance.
 - PCB DRC: zero errors before manufacture.
 
@@ -237,12 +237,9 @@ The 3 Vpp target was met. Stage 2 output matched the calculated value to within 
 The technical report was written in Microsoft Word with IEEE formatting throughout.
 
 Key challenges:
-- **Page limit:** strict 15-page maximum including appendices. Attempt 1 was 20 pages and lost marks. Attempt 2 trimmed to exactly 15 pages.
-- **Referencing:** 14 references cited in body text. Two TI application notes (SLOA058 and SLOD006B) had broken URLs after TI reorganised their site — cited by document number only.
+- **Page limit:** strict 15-page maximum including appendices. Attempt 1 was 20 pages and lost marks. 
+- **Referencing:** 14 references cited in body text. Two TI application notes (SLOA058 and SLOD006B) had broken URLs after TI reorganised their site - cited by document number only.
 - **Graphs:** simulation as smooth lines (501 data points), measured data as markers only. No titles inside the figure area.
-- **SafeAssign:** Attempt 1 = 23%, Attempt 2 = 13% overall and 0% internet match.
-
-Report submitted: **5 March 2026** — eleven days before the 16 March deadline.
 
 ---
 
@@ -256,9 +253,7 @@ Report submitted: **5 March 2026** — eleven days before the 16 March deadline.
 | Lower cut-off (Hz) | 6.63 | 6.60 | ~7.2 | ~6.8 | ~6.9 | ~13.2 |
 | Upper cut-off (kHz) | 28.54 | 27.7 | ~26.0 | ~27.1 | ~29.5 | ~30.0 |
 
-The PCB Stage 2 lower cut-off of ~13.2 Hz is higher than design because C8 and the 8.2 Ω load introduce an additional high-pass pole. This does not affect audible performance — 13.2 Hz is below the 20 Hz limit of human hearing.
-
-**Official mark: 94.6%**
+The PCB Stage 2 lower cut-off of ~13.2 Hz is higher than design because C8 and the 8.2 Ω load introduce an additional high-pass pole. This does not affect audible performance - 13.2 Hz is below the 20 Hz limit of human hearing.
 
 ---
 
@@ -266,7 +261,7 @@ The PCB Stage 2 lower cut-off of ~13.2 Hz is higher than design because C8 and t
 
 **Technical:**
 - Single-supply biasing is the central design challenge for portable audio. Every decision about bias voltage, decoupling and AC coupling flows from getting Vcc/2 right.
-- Capacitor tolerances (±20%) matter more than resistor tolerances (±1%) for cut-off frequency accuracy. C2 being rounded from 1.326 µF to 1 µF shifted fL from 5 Hz to 6.63 Hz — still within the audible range but worth understanding.
+- Capacitor tolerances (±20%) matter more than resistor tolerances (±1%) for cut-off frequency accuracy. C2 being rounded from 1.326 µF to 1 µF shifted fL from 5 Hz to 6.63 Hz - still within the audible range but worth understanding.
 - PCB decoupling placement is not optional. A 100 nF capacitor even one centimetre from the supply pin is measurably less effective than one sitting directly on it.
 - Photograph every build stage. These photographs saved hours of report writing.
 
@@ -283,11 +278,11 @@ The PCB Stage 2 lower cut-off of ~13.2 Hz is higher than design because C8 and t
 
 ## 13. What I Would Do Differently
 
-1. **Power input** — replace the screw terminal with a dedicated DC barrel jack accepting both a 12 V adapter and a 9 V battery clip. Eliminates the risk of reversed polarity and improves usability.
-2. **Enclosure** — design a proper enclosure from the start rather than as an afterthought. A panel with a speaker grille would make the device feel like a finished product.
-3. **Conformal coating** — apply to the finished PCB before final assembly for moisture resistance and long-term reliability.
-4. **Wireless input** — replace the 3.5 mm jack with a Bluetooth audio receiver module to eliminate the physical cable to the phone and make the device genuinely portable.
-5. **Page planning** — plan the report page count from day one. The 20-page Attempt 1 was submitted before the limit was properly checked.
+1. **Power input** - replace the screw terminal with a dedicated DC barrel jack accepting both a 12 V adapter and a 9 V battery clip. Eliminates the risk of reversed polarity and improves usability.
+2. **Enclosure** - design a proper enclosure from the start rather than as an afterthought. A panel with a speaker grille would make the device feel like a finished product.
+3. **Conformal coating** - apply to the finished PCB before final assembly for moisture resistance and long-term reliability.
+4. **Wireless input** - replace the 3.5 mm jack with a Bluetooth audio receiver module to eliminate the physical cable to the phone and make the device genuinely portable.
+5. **Page planning** - plan the report page count from day one. The 20-page Attempt 1 was submitted before the limit was properly checked.
 
 ---
 
@@ -297,9 +292,9 @@ Published to GitHub in May 2026 after the official mark was confirmed. Publishin
 
 Repository: [github.com/zaccessss/two-stage-audio-amplifier](https://github.com/zaccessss/two-stage-audio-amplifier)
 
-All binary files (PDF report, Excel workbooks) were replaced with markdown before publication because the original files contained a student ID. All technical content is preserved in the markdown files.
+All binary files (PDF report, Excel workbooks) were replaced with markdown before publication because the original files contained private credentials. All technical content is preserved in the markdown files.
 
-The GitHub workflow was practised deliberately on every change — issue, branch, commit, push, PR, merge, delete branch — to build the habit before Year 2.
+The GitHub workflow was practised deliberately on every change - issue, branch, commit, push, PR, merge, delete branch - to build the habit before Year 2.
 
 ---
 
