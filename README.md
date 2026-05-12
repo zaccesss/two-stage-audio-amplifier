@@ -7,7 +7,7 @@
   <a href="https://www.linkedin.com/in/isaacadjei">
     <img src="https://img.shields.io/badge/LinkedIn-Isaac_Adjei-0a66c2?style=for-the-badge&logo=linkedin&logoColor=white">
   </a>
-  <a href="mailto:offices.isaac@gmail.com">
+  <a href="mailto:eng@isaacadjei.me">
     <img src="https://img.shields.io/badge/Email-Contact-ff6f61?style=for-the-badge&logo=gmail&logoColor=white">
   </a>
   <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge">
@@ -145,7 +145,7 @@ Isaac "Zac" Adjei
 
 - GitHub: [zaccesss](https://github.com/zaccesss)
 - Website: [isaacadjei.me](https://isaacadjei.me)
-- Email: offices.isaac@gmail.com
+- Email: eng@isaacadjei.me
 
 <p align="center">
   <b>Project Status:</b> Completed &nbsp;|&nbsp; <b>Last Updated:</b> May 2026
