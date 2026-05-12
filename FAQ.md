@@ -86,7 +86,7 @@ Yes. This project is released under the MIT License. See [LICENSE](LICENSE) for 
 
 Open an issue in this repository for questions or corrections.
 
-You can also reach out directly at offices.isaac@gmail.com.
+You can also reach out directly at eng@isaacadjei.me.
 
 <p align="center">
   <b>Project Status:</b> Completed &nbsp;|&nbsp; <b>Last Updated:</b> May 2026
