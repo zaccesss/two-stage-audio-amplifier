@@ -290,7 +290,7 @@ The PCB Stage 2 lower cut-off of ~13.2 Hz is higher than design because C8 and t
 
 Published to GitHub in May 2026 after the official mark was confirmed. Publishing before results were released would have carried academic malpractice risk.
 
-Repository: [github.com/zaccessss/two-stage-audio-amplifier](https://github.com/zaccessss/two-stage-audio-amplifier)
+Repository: [github.com/zaccesss/two-stage-audio-amplifier](https://github.com/zaccesss/two-stage-audio-amplifier)
 
 All binary files (PDF report, Excel workbooks) were replaced with markdown before publication because the original files contained private credentials. All technical content is preserved in the markdown files.
 
