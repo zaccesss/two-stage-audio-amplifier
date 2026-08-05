@@ -38,7 +38,7 @@ The OPA551 can deliver up to ±200 mA continuous output current, which is needed
 
 **Can the cutoff frequencies be changed?**
 
-Yes. The lower cutoff frequency (fL = 5 Hz) is set by R2 and C2. The upper cutoff frequency (fH = 28.54 kHz) is set by R1 and C1. Changing either RC pair adjusts the corresponding cutoff. The exact component values are in `design/calculations/Audio Amplifier Design Calculations.xlsx`.
+Yes. The lower cutoff frequency (fL = 5 Hz) is set by R2 and C2. The upper cutoff frequency (fH = 28.54 kHz) is set by R1 and C1. Changing either RC pair adjusts the corresponding cutoff. The exact component values are worked through in [report/JOURNAL.md](report/JOURNAL.md#4-design-calculations).
 
 **What supply voltage does the circuit use?**
 
@@ -60,9 +60,10 @@ Proteus was used for schematic capture, PCB layout and SPICE frequency sweep and
 
 Proteus design files (`.pdsprj`) require Labcenter Electronics Proteus to open. The key schematic and PCB views are exported as PNG files in `design/proteus/exports/` for reference without needing Proteus installed.
 
-**How do I open the Excel workbooks?**
+**Where are the original Excel workbooks?**
 
-Any version of Microsoft Excel or a compatible spreadsheet application. The workbooks in `design/calculations/` contain design calculations, component value derivations and frequency response data.
+> [!NOTE]
+> I replaced the original design calculation workbooks with markdown before publishing this project, since they contained private credentials. The full design calculations, component value derivations and frequency response data are preserved in [report/JOURNAL.md](report/JOURNAL.md#4-design-calculations).
 
 ---
 
