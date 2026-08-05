@@ -57,7 +57,7 @@ two-stage-audio-amplifier/
 ├── README.md                       Project overview and quick links
 ├── DOCUMENTATION.md                Full technical reference (this file)
 ├── CONTRIBUTING.md                 Commit and workflow standards
-├── LICENSE                         MIT license
+├── LICENSE                         CC BY-NC-ND 4.0 license
 │
 ├── .github/
 │   └── ISSUE_TEMPLATE/
@@ -402,7 +402,7 @@ Exact values for R1, R2, C1 and C2 are worked through in [report/JOURNAL.md](rep
 
 ## 14. License
 
-This project is released under the MIT License. See [LICENSE](LICENSE).
+This is an engineering report, not software. It is released under CC BY-NC-ND 4.0, which permits sharing with attribution but not commercial use or derivatives. See [LICENSE](LICENSE).
 
 ---
 

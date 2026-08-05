@@ -79,7 +79,7 @@ The full image gallery is at [media/GALLERY.md](media/GALLERY.md). It includes f
 
 **Can I reuse this design?**
 
-Yes. This project is released under the MIT License. See [LICENSE](LICENSE) for terms.
+This is an engineering report, not software. It is released under CC BY-NC-ND 4.0, which permits sharing with attribution but not commercial use or derivatives. See [LICENSE](LICENSE) for terms.
 
 ---
 

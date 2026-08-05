@@ -10,7 +10,7 @@
   <a href="mailto:eng@isaacadjei.me">
     <img src="https://img.shields.io/badge/Email-Contact-ff6f61?style=for-the-badge&logo=gmail&logoColor=white">
   </a>
-  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge">
+  <img src="https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey?style=for-the-badge">
   <img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge">
 </p>
 
@@ -136,7 +136,7 @@ two-stage-audio-amplifier/
 ├── FAQ.md                  Frequently asked questions
 ├── CONTRIBUTING.md         Commit and workflow standards
 ├── NOTICE.md               Third-party media attribution
-└── LICENSE                 MIT
+└── LICENSE                 CC BY-NC-ND 4.0
 ```
 
 ---
