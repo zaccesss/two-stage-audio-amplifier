@@ -11,31 +11,32 @@ Full technical reference for the two-stage audio amplifier project. Covers syste
 - [1. Project Overview](#1-project-overview)
 - [2. Repository Structure](#2-repository-structure)
 - [3. System Architecture](#3-system-architecture)
-- [4. Design Specification](#4-design-specification)
-- [5. Stage 1: Active Band-Pass Filter](#5-stage-1-active-band-pass-filter)
-  - [5.1 Theory](#51-theory)
-  - [5.2 TL071 Op-Amp](#52-tl071-op-amp)
-  - [5.3 Cutoff Frequency Design](#53-cutoff-frequency-design)
-  - [5.4 Voltage Gain](#54-voltage-gain)
-- [6. Stage 2: Unity-Gain Power Buffer](#6-stage-2-unity-gain-power-buffer)
-  - [6.1 OPA551 Op-Amp](#61-opa551-op-amp)
-  - [6.2 Buffer Configuration](#62-buffer-configuration)
-- [7. Single-Supply Design](#7-single-supply-design)
-- [8. Proteus Simulation](#8-proteus-simulation)
-  - [8.1 Schematic](#81-schematic)
-  - [8.2 Frequency Response Simulation](#82-frequency-response-simulation)
-  - [8.3 Time-Domain Analysis](#83-time-domain-analysis)
-- [9. PCB Design](#9-pcb-design)
-  - [9.1 Layout](#91-layout)
-  - [9.2 3D Model](#92-3d-model)
-- [10. Build and Test](#10-build-and-test)
-  - [10.1 Breadboard Prototype](#101-breadboard-prototype)
-  - [10.2 PCB Assembly](#102-pcb-assembly)
-  - [10.3 Oscilloscope Measurements](#103-oscilloscope-measurements)
-- [11. Results](#11-results)
-- [12. Bill of Materials](#12-bill-of-materials)
-- [13. License](#13-license)
-- [14. Attribution](#14-attribution)
+- [4. Source Characterisation](#4-source-characterisation)
+- [5. Design Specification](#5-design-specification)
+- [6. Stage 1: Active Band-Pass Filter](#6-stage-1-active-band-pass-filter)
+  - [6.1 Theory](#61-theory)
+  - [6.2 TL071 Op-Amp](#62-tl071-op-amp)
+  - [6.3 Cutoff Frequency Design](#63-cutoff-frequency-design)
+  - [6.4 Voltage Gain](#64-voltage-gain)
+- [7. Stage 2: Unity-Gain Power Buffer](#7-stage-2-unity-gain-power-buffer)
+  - [7.1 OPA551 Op-Amp](#71-opa551-op-amp)
+  - [7.2 Buffer Configuration](#72-buffer-configuration)
+- [8. Single-Supply Design](#8-single-supply-design)
+- [9. Proteus Simulation](#9-proteus-simulation)
+  - [9.1 Schematic](#91-schematic)
+  - [9.2 Frequency Response Simulation](#92-frequency-response-simulation)
+  - [9.3 Time-Domain Analysis](#93-time-domain-analysis)
+- [10. PCB Design](#10-pcb-design)
+  - [10.1 Layout](#101-layout)
+  - [10.2 3D Model](#102-3d-model)
+- [11. Build and Test](#11-build-and-test)
+  - [11.1 Breadboard Prototype](#111-breadboard-prototype)
+  - [11.2 PCB Assembly](#112-pcb-assembly)
+  - [11.3 Oscilloscope Measurements](#113-oscilloscope-measurements)
+- [12. Results](#12-results)
+- [13. Bill of Materials](#13-bill-of-materials)
+- [14. License](#14-license)
+- [15. Attribution](#15-attribution)
 
 ---
 
@@ -56,7 +57,7 @@ two-stage-audio-amplifier/
 ├── README.md                       Project overview and quick links
 ├── DOCUMENTATION.md                Full technical reference (this file)
 ├── CONTRIBUTING.md                 Commit and workflow standards
-├── LICENSE                         MIT license
+├── LICENSE                         CC BY-NC-ND 4.0 license
 │
 ├── .github/
 │   └── ISSUE_TEMPLATE/
@@ -64,10 +65,6 @@ two-stage-audio-amplifier/
 │       └── docs_update.md          Documentation update template
 │
 ├── design/
-│   ├── calculations/               Design calculation workbooks
-│   │   ├── Audio Amplifier Design Calculations.xlsx
-│   │   ├── audio-amp-design-workbook.xlsx
-│   │   └── frequency-response-data.xlsx
 │   └── proteus/
 │       └── exports/                PNG exports from Proteus
 │
@@ -130,9 +127,9 @@ The volume scale is not linear: output increases slowly at low steps and rises s
 
 ---
 
-## 5. Stage 1: Active Band-Pass Filter
+## 6. Stage 1: Active Band-Pass Filter
 
-### 5.1 Theory
+### 6.1 Theory
 
 An active band-pass filter combines a high-pass and a low-pass response in a single amplifier stage. The lower cutoff frequency (fL) is set by the high-pass RC network at the input. The upper cutoff frequency (fH) is set by the low-pass RC network in the feedback path. Frequencies between fL and fH pass through with gain; frequencies outside this range are attenuated at 20 dB per decade.
 
@@ -150,7 +147,7 @@ Using an op-amp rather than passive components (resistors and capacitors alone) 
   <img src="media/images/Figure3_PassiveVsActive.png" alt="Passive vs active filter comparison" width="550">
 </p>
 
-### 5.2 TL071 Op-Amp
+### 6.2 TL071 Op-Amp
 
 <p align="center">
   <img src="media/images/TL071_pinout_diagram.png" alt="TL071 pinout diagram" width="300">
@@ -164,7 +161,7 @@ The TL071CP is a single JFET-input operational amplifier. Key characteristics re
 - Supply range of ±2 V to ±18 V (or equivalent single supply up to 36 V)
 - Low offset voltage suitable for audio-frequency applications
 
-### 5.3 Cutoff Frequency Design
+### 6.3 Cutoff Frequency Design
 
 The lower cutoff frequency is set by R2 and C2:
 
@@ -178,9 +175,9 @@ The upper cutoff frequency is set by R1 and C1:
 fH = 1 / (2π × R1 × C1)    target: 28.54 kHz
 ```
 
-Component subscripts match the schematic designators used throughout this project. The exact calculated values for R1, R2, C1 and C2 are in `design/calculations/Audio Amplifier Design Calculations.xlsx`.
+Component subscripts match the schematic designators used throughout this project. The exact calculated values for R1, R2, C1 and C2 are worked through in [report/JOURNAL.md](report/JOURNAL.md#4-design-calculations).
 
-### 5.4 Voltage Gain
+### 6.4 Voltage Gain
 
 The midband voltage gain is set by the ratio of the feedback resistor (R5 = 82 kΩ) to the input resistor. The target gain brings the 0.868 Vpp input up to 3 Vpp at the Stage 1 output.
 
@@ -188,9 +185,9 @@ Measured at 440 Hz on the completed PCB: input 0.868 Vpp, output 3.000 Vpp, givi
 
 ---
 
-## 6. Stage 2: Unity-Gain Power Buffer
+## 7. Stage 2: Unity-Gain Power Buffer
 
-### 6.1 OPA551 Op-Amp
+### 7.1 OPA551 Op-Amp
 
 <p align="center">
   <img src="media/images/OPA551_pinout_diagram.png" alt="OPA551 pinout diagram" width="320">
@@ -204,7 +201,7 @@ The OPA551PA is a high-voltage, high-current operational amplifier. Key characte
 - Unity-gain stable
 - Designed for driving low-impedance loads such as speakers and motors directly
 
-### 6.2 Buffer Configuration
+### 7.2 Buffer Configuration
 
 Stage 2 is configured as a unity-gain voltage follower (output connected directly to the inverting input). The output voltage equals the input voltage at all frequencies within the op-amp bandwidth. No additional gain is introduced; the sole purpose of this stage is to provide the current drive that Stage 1 cannot supply into an 8 Ω load.
 
@@ -212,7 +209,7 @@ Measured at 440 Hz on the completed PCB: input 0.872 Vpp, output 2.980 Vpp, conf
 
 ---
 
-## 7. Single-Supply Design
+## 8. Single-Supply Design
 
 The initial breadboard prototype used a symmetric dual supply (±V). The final design operates from a single supply rail to simplify the power requirements.
 
@@ -226,9 +223,9 @@ During oscilloscope measurements a 470 nF capacitor was used as an AC-coupling e
 
 ---
 
-## 8. Proteus Simulation
+## 9. Proteus Simulation
 
-### 8.1 Schematic
+### 9.1 Schematic
 
 The full circuit was drawn in Proteus schematic capture before simulation or PCB layout. Both stages, the single-supply bias network and all passive components are shown.
 
@@ -236,7 +233,7 @@ The full circuit was drawn in Proteus schematic capture before simulation or PCB
   <img src="design/proteus/exports/schematic.png" alt="Full circuit schematic exported from Proteus" width="750">
 </p>
 
-### 8.2 Frequency Response Simulation
+### 9.2 Frequency Response Simulation
 
 The frequency response was simulated using Proteus SPICE frequency sweep analysis. 501 data points were captured across the audio band to produce smooth curves. Simulation data was exported to Excel and plotted alongside breadboard and PCB measured data for direct comparison.
 
@@ -248,9 +245,9 @@ The frequency response was simulated using Proteus SPICE frequency sweep analysi
   <img src="media/images/Figure15_PCB_FreqResponse.png" alt="Frequency response with measured data overlay" width="700">
 </p>
 
-The combined frequency response chart in `design/calculations/frequency-response-data.xlsx` contains four data series: Stage 1 simulation, Stage 2 simulation, breadboard measured data and PCB measured data.
+The combined frequency response chart above overlays four data series: Stage 1 simulation, Stage 2 simulation, breadboard measured data and PCB measured data.
 
-### 8.3 Time-Domain Analysis
+### 9.3 Time-Domain Analysis
 
 Time-domain simulation at 440 Hz was used to verify output waveform shape and amplitude for both stages.
 
@@ -262,13 +259,14 @@ Time-domain simulation at 440 Hz was used to verify output waveform shape and am
   <img src="design/proteus/exports/analogue ana 2.png" alt="Stage 2 time-domain simulation at 440 Hz" width="650">
 </p>
 
-Note: the OPA551 SPICE model in Proteus does not simulate the Stage 2 buffer output correctly in time-domain analysis at 440 Hz. A workaround was applied for the relevant figures; the frequency-domain simulation and all measured results are unaffected.
+> [!NOTE]
+> The OPA551 SPICE model in Proteus does not simulate the Stage 2 buffer output correctly in time-domain analysis at 440 Hz. I applied a workaround for the relevant figures; the frequency-domain simulation and all measured results are unaffected.
 
 ---
 
-## 9. PCB Design
+## 10. PCB Design
 
-### 9.1 Layout
+### 10.1 Layout
 
 The PCB was designed in Proteus PCB layout following schematic capture. Both the top and bottom copper layers are used. Components are placed to minimise trace lengths for the signal path and to keep decoupling capacitors close to the op-amp supply pins.
 
@@ -280,7 +278,7 @@ The PCB was designed in Proteus PCB layout following schematic capture. Both the
   <img src="media/images/Figure11_PCB_Bottom.png" alt="PCB bottom copper layer" width="500">
 </p>
 
-### 9.2 3D Model
+### 10.2 3D Model
 
 Proteus generates a 3D model from the PCB layout. Three views are shown below.
 
@@ -298,9 +296,9 @@ Proteus generates a 3D model from the PCB layout. Three views are shown below.
 
 ---
 
-## 10. Build and Test
+## 11. Build and Test
 
-### 10.1 Breadboard Prototype
+### 11.1 Breadboard Prototype
 
 The circuit was first built on breadboard using a symmetric dual supply to verify the design before adapting for single supply.
 
@@ -314,7 +312,7 @@ The design was then adapted for single-supply operation by adding the bias netwo
   <img src="media/images/Figure14_SingleSupply_Breadboard.png" alt="Single supply breadboard build" width="600">
 </p>
 
-### 10.2 PCB Assembly
+### 11.2 PCB Assembly
 
 The manufactured PCB was populated with components and mounted using M3 nylon standoffs.
 
@@ -330,7 +328,7 @@ The manufactured PCB was populated with components and mounted using M3 nylon st
   <img src="media/images/Figure17d_PCB_Underside.jpg" alt="PCB underside" width="500">
 </p>
 
-### 10.3 Oscilloscope Measurements
+### 11.3 Oscilloscope Measurements
 
 Measurements were taken at 440 Hz using a TBS1052C oscilloscope. A 470 nF capacitor was connected in series with the oscilloscope probe to AC-couple the measurement and remove the DC bias offset present in the single-supply design.
 
@@ -348,16 +346,16 @@ Measurements were taken at 440 Hz using a TBS1052C oscilloscope. A 470 nF capaci
 
 ---
 
-## 11. Results
+## 12. Results
 
-### 11.1 PCB Measurements at 440 Hz
+### 12.1 PCB Measurements at 440 Hz
 
 | Stage | Input | Output | Notes |
 |---|---|---|---|
 | Stage 1 (TL071 active filter) | 0.868 Vpp | 3.000 Vpp | Meets 3 Vpp target exactly |
 | Stage 2 (OPA551 buffer) | 0.872 Vpp | 2.980 Vpp | Unity gain confirmed |
 
-### 11.2 Performance Summary
+### 12.2 Performance Summary
 
 | Parameter | Calculated | Simulated | Breadboard (dual) | Breadboard (single) | PCB |
 |---|---|---|---|---|---|
@@ -368,7 +366,7 @@ Measurements were taken at 440 Hz using a TBS1052C oscilloscope. A 470 nF capaci
 
 The full comparison table with calculated, simulated and measured data across all four test configurations is in the [full technical report](report/REPORT.md#42-pcb-testing).
 
-### 11.3 Frequency Response
+### 12.3 Frequency Response
 
 <p align="center">
   <img src="media/images/human_hearing_range.png" alt="Human hearing range reference" width="600">
@@ -382,7 +380,7 @@ The amplifier passband (5 Hz to 28.54 kHz) covers the full range of human hearin
 
 ---
 
-## 12. Bill of Materials
+## 13. Bill of Materials
 
 | Designator | Component | Value / Part | Purpose |
 |---|---|---|---|
@@ -398,17 +396,17 @@ The amplifier passband (5 Hz to 28.54 kHz) covers the full range of human hearin
 | D1, D2 | Diode | Protection | Power supply clamping |
 | n/a | Capacitors | Decoupling | Op-amp supply pin decoupling |
 
-Exact values for R1, R2, C1 and C2 are in `design/calculations/Audio Amplifier Design Calculations.xlsx`. The full BOM with Aston MB252 stock codes is in `design/calculations/audio-amp-design-workbook.xlsx`.
+Exact values for R1, R2, C1 and C2 are worked through in [report/JOURNAL.md](report/JOURNAL.md#4-design-calculations). The original Excel workbooks (including the full BOM with Aston MB252 stock codes) were replaced with markdown before this project was published, since they contained private credentials; see [report/JOURNAL.md](report/JOURNAL.md#14-github-publication).
 
 ---
 
-## 13. License
+## 14. License
 
-This project is released under the MIT License. See [LICENSE](LICENSE).
+This is an engineering report, not software. It is released under CC BY-NC-ND 4.0, which permits sharing with attribution but not commercial use or derivatives. See [LICENSE](LICENSE).
 
 ---
 
-## 14. Attribution
+## 15. Attribution
 
 Lead designer: Isaac "Zac" Adjei
 
