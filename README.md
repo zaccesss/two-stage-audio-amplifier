@@ -10,13 +10,13 @@
   <a href="mailto:eng@isaacadjei.me">
     <img src="https://img.shields.io/badge/Email-Contact-ff6f61?style=for-the-badge&logo=gmail&logoColor=white">
   </a>
-  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge">
+  <img src="https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey?style=for-the-badge">
   <img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge">
 </p>
 
-A two-stage audio amplifier designed to take a line-level audio input from a mobile phone and drive an 8 Ω speaker. Stage 1 is an inverting active band-pass filter built around a TL071 op-amp. Stage 2 is a unity-gain power buffer built around an OPA551, providing the current drive needed to power the speaker. The full design was simulated in Proteus SPICE, built and verified on breadboard and implemented as a custom PCB.
+I built this two-stage audio amplifier to take a line-level audio signal from a mobile phone and drive an 8 Ω speaker. I took the design from initial hand calculations through Proteus SPICE simulation, breadboard prototyping on both dual and single supply and a final custom PCB.
 
-<h2 align="center">Final Assembly</h2>
+## Final Assembly
 
 <p align="center">
   <img src="media/images/Figure17c_PCB_Angled.jpg" alt="Assembled PCB angled view showing component placement" width="480">
@@ -39,12 +39,10 @@ A two-stage audio amplifier designed to take a line-level audio input from a mob
 
 ## Overview
 
-The amplifier consists of two cascaded stages:
+The amplifier is two cascaded stages:
 
-- **Stage 1 (TL071 Active Band-Pass Filter):** Provides frequency selectivity across the human hearing range (5 Hz to 28.54 kHz) and voltage gain to bring the 0.87 Vpp mobile phone output up to 3 Vpp.
-- **Stage 2 (OPA551 Unity-Gain Buffer):** Replicates the Stage 1 output voltage at high current, driving the 8 Ω speaker load without adding gain.
-
-The design was taken from initial calculations through Proteus SPICE simulation, dual-supply breadboard, single-supply breadboard and finally a completed PCB.
+- **Stage 1 (TL071 active band-pass filter):** provides frequency selectivity across the human hearing range (5 Hz to 28.54 kHz) and voltage gain, bringing the 0.87 Vpp phone output up to 3 Vpp.
+- **Stage 2 (OPA551 unity-gain buffer):** replicates the Stage 1 output voltage at high current, driving the 8 Ω speaker without adding further gain.
 
 ---
 
@@ -74,7 +72,7 @@ PCB measurements at 440 Hz:
 | Stage 1 (TL071 active filter) | 0.868 Vpp | 3.000 Vpp | Meets 3 Vpp target |
 | Stage 2 (OPA551 buffer) | 0.872 Vpp | 2.980 Vpp | Unity gain confirmed |
 
-Frequency response verified across the full audio band on both breadboard and PCB. Full results with simulation comparison in [DOCUMENTATION.md](DOCUMENTATION.md#10-results).
+I verified frequency response across the full audio band on both breadboard and PCB. Full results with simulation comparison are in [DOCUMENTATION.md](DOCUMENTATION.md#12-results).
 
 ---
 
@@ -83,9 +81,9 @@ Frequency response verified across the full audio band on both breadboard and PC
 <p align="center">
   <img src="media/assets/proteus.jpg" alt="Proteus EDA" width="65" title="Proteus">
   &nbsp;&nbsp;
-  <img src="https://techstack-generator.vercel.app/github-icon.svg" alt="GitHub" width="65" title="GitHub">
+  <img src="media/assets/github-icon.svg" alt="GitHub" width="65" title="GitHub">
   &nbsp;&nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" width="65" title="Git">
+  <img src="media/assets/git-icon.svg" alt="Git" width="65" title="Git">
   &nbsp;&nbsp;
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" width="65" title="VS Code">
   &nbsp;&nbsp;
@@ -125,16 +123,20 @@ Frequency response verified across the full audio band on both breadboard and PC
 two-stage-audio-amplifier/
 ├── design/
 │   └── proteus/
-│       └── exports/        Schematic, PCB layout and simulation exports (PNG)
+│       └── exports/       Schematic, PCB layout and simulation exports (PNG)
 ├── media/
 │   ├── images/             Circuit figures, PCB photographs and oscilloscope traces
 │   ├── block-diagrams/     System block diagrams and design flowcharts
+│   ├── assets/             Icons used in this README
 │   └── GALLERY.md          Curated image gallery with descriptions
 ├── report/
-│   └── REPORT.md           Full technical report in markdown
+│   ├── REPORT.md           Full technical report in markdown
+│   └── JOURNAL.md          Project retrospective and build journal
 ├── DOCUMENTATION.md        Complete technical reference
+├── FAQ.md                  Frequently asked questions
 ├── CONTRIBUTING.md         Commit and workflow standards
-└── LICENSE                 MIT
+├── NOTICE.md               Third-party media attribution
+└── LICENSE                 CC BY-NC-ND 4.0
 ```
 
 ---
@@ -149,8 +151,4 @@ Isaac "Zac" Adjei
 
 <p align="center">
   <b>Project Status:</b> Completed &nbsp;|&nbsp; <b>Last Updated:</b> May 2026
-</p>
-
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer" />
 </p>
