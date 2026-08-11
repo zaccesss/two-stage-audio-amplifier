@@ -1,20 +1,13 @@
 # Two-Stage Audio Amplifier
 
 <p align="center">
-  <a href="https://isaacadjei.me">
-    <img src="https://img.shields.io/badge/Website-isaacadjei.me-111111?style=for-the-badge&logo=firefox&logoColor=white">
-  </a>
-  <a href="https://www.linkedin.com/in/isaacadjei">
-    <img src="https://img.shields.io/badge/LinkedIn-Isaac_Adjei-0a66c2?style=for-the-badge&logo=linkedin&logoColor=white">
-  </a>
-  <a href="mailto:eng@isaacadjei.me">
-    <img src="https://img.shields.io/badge/Email-Contact-ff6f61?style=for-the-badge&logo=gmail&logoColor=white">
-  </a>
-  <img src="https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey?style=for-the-badge">
   <img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge">
+  <a href="https://doi.org/PENDING">
+    <img src="https://zenodo.org/badge/DOI/PENDING.svg?style=for-the-badge">
+  </a>
 </p>
 
-I built this two-stage audio amplifier to take a line-level audio signal from a mobile phone and drive an 8 Ω speaker. I took the design from initial hand calculations through Proteus SPICE simulation, breadboard prototyping on both dual and single supply and a final custom PCB.
+This two-stage audio amplifier takes a line-level audio signal from a mobile phone and drives an 8 Ω speaker. The design was taken from initial hand calculations through Proteus SPICE simulation, breadboard prototyping on both dual and single supply and a final custom PCB.
 
 ## Final Assembly
 
@@ -73,7 +66,7 @@ PCB measurements at 440 Hz:
 | Stage 1 (TL071 active filter) | 0.868 Vpp | 3.000 Vpp | Meets 3 Vpp target |
 | Stage 2 (OPA551 buffer) | 0.872 Vpp | 2.980 Vpp | Unity gain confirmed |
 
-I verified frequency response across the full audio band on both breadboard and PCB. Full results with simulation comparison are in [DOCUMENTATION.md](DOCUMENTATION.md#12-results).
+Frequency response was verified across the full audio band on both breadboard and PCB. Full results with simulation comparison are in [DOCUMENTATION.md](DOCUMENTATION.md#12-results).
 
 ---
 
@@ -81,7 +74,7 @@ I verified frequency response across the full audio band on both breadboard and 
 
 <div align="center">
 
-| <img src="media/assets/proteus.jpg" alt="Proteus" width="60" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" width="60" /> | <img src="https://techstack-generator.vercel.app/github-icon.svg" alt="GitHub" width="60" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" width="60" /> | <img src="https://cdn.simpleicons.org/microsoftexcel/217346" alt="Microsoft Excel" width="60" /> | <img src="https://cdn.simpleicons.org/microsoftword/2B579A" alt="Microsoft Word" width="60" /> |
+| <img src="media/assets/proteus.jpg" alt="Proteus" width="60" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" width="60" /> | <img src="https://techstack-generator.vercel.app/github-icon.svg" alt="GitHub" width="60" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" width="60" /> | <img src="media/assets/excel-icon.png" alt="Microsoft Excel" width="60" /> | <img src="media/assets/word-icon.png" alt="Microsoft Word" width="60" /> |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | **Proteus** | **Git** | **GitHub** | **VS Code** | **Excel** | **Word** |
 
@@ -130,14 +123,14 @@ two-stage-audio-amplifier/
 ## Citing This Work
 
 > [!NOTE]
-> I am registering this repository with Zenodo so it has a permanent, citable DOI. See [CITATION.cff](CITATION.cff) for the full citation. Use the "Cite this repository" option on GitHub or the badge below once the DOI is live.
+> This repository is being registered with Zenodo so it has a permanent, citable DOI. See [CITATION.cff](CITATION.cff) for the full citation. The "Cite this repository" option on GitHub can also be used.
 >
-> [![DOI](https://zenodo.org/badge/DOI/PENDING.svg)](https://doi.org/PENDING)
+> Once the DOI is live, see the badge at the top of this page or follow [the Zenodo record](https://doi.org/PENDING).
 
 ## Contact
 
 > [!TIP]
-> I am Isaac "Zac" Adjei. If you have questions about this project, reach me through any of the following:
+> This project is maintained by Isaac "Zac" Adjei. Questions about it can be directed to any of the following:
 >
 > - GitHub: [zaccesss](https://github.com/zaccesss)
 > - Website: [isaacadjei.me](https://isaacadjei.me)
