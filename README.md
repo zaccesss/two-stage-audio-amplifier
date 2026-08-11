@@ -2,8 +2,8 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge">
-  <a href="https://doi.org/PENDING">
-    <img src="https://zenodo.org/badge/DOI/PENDING.svg?style=for-the-badge">
+  <a href="CITATION.cff">
+    <img src="https://img.shields.io/badge/DOI-pending-lightgrey?style=for-the-badge">
   </a>
 </p>
 
@@ -125,7 +125,7 @@ two-stage-audio-amplifier/
 > [!NOTE]
 > This repository is being registered with Zenodo so it has a permanent, citable DOI. See [CITATION.cff](CITATION.cff) for the full citation. The "Cite this repository" option on GitHub can also be used.
 >
-> Once the DOI is live, see the badge at the top of this page or follow [the Zenodo record](https://doi.org/PENDING).
+> Once the DOI is live, the badge at the top of this page will link straight to the Zenodo record.
 
 ## Contact
 
