@@ -1,9 +1,9 @@
 # Notice
 
-The Creative Commons license in [LICENSE](LICENSE) covers my own work in this repository:
+The Creative Commons licence in [LICENSE](LICENSE) covers my own work in this repository:
 the written report, the circuit and PCB designs and my own photographs.
 
-Some bundled media is third-party and is **not** covered by that license:
+Some bundled media is third-party and is **not** covered by that licence:
 
 - `media/images/OPA551_pinout_diagram.png` and `media/images/TL071_pinout_diagram.png` are
   taken from Texas Instruments datasheets and remain © Texas Instruments.

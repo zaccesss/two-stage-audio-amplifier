@@ -35,18 +35,18 @@ Full technical reference for the two-stage audio amplifier project. Covers syste
   - [11.3 Oscilloscope Measurements](#113-oscilloscope-measurements)
 - [12. Results](#12-results)
 - [13. Bill of Materials](#13-bill-of-materials)
-- [14. License](#14-license)
+- [14. Licence](#14-licence)
 - [15. Attribution](#15-attribution)
 
 ---
 
 ## 1. Project Overview
 
-The two-stage audio amplifier takes a line-level audio signal from a mobile phone headphone output and drives an 8 Ω speaker at a target output voltage of 3 Vpp. The design was completed from initial hand calculations through Proteus SPICE simulation, breadboard prototyping on both dual and single supply and a final PCB implementation.
+I built this two-stage audio amplifier to take a line-level audio signal from a mobile phone headphone output and drive an 8 Ω speaker at a target output voltage of 3 Vpp. I completed the design from initial hand calculations through Proteus SPICE simulation, breadboard prototyping on both dual and single supply and a final PCB implementation.
 
-The circuit uses two operational amplifiers in cascade. The first stage provides frequency selectivity and voltage gain. The second stage provides current drive capability without adding gain, allowing the amplifier to power an 8 Ω load directly.
+The circuit uses two operational amplifiers in cascade. The first stage provides frequency selectivity and voltage gain. The second stage provides current drive capability without adding gain, so the amplifier can power an 8 Ω load directly.
 
-The audio source used throughout the project was an iPhone 14 Pro Max, characterised at 440 Hz with a measured output of 0.872 Vpp.
+I used an iPhone 14 Pro Max as the audio source throughout the project, characterised at 440 Hz with a measured output of 0.872 Vpp.
 
 ---
 
@@ -57,7 +57,7 @@ two-stage-audio-amplifier/
 ├── README.md                       Project overview and quick links
 ├── DOCUMENTATION.md                Full technical reference (this file)
 ├── CONTRIBUTING.md                 Commit and workflow standards
-├── LICENSE                         CC BY-NC-ND 4.0 license
+├── LICENSE                         CC BY-NC-ND 4.0 licence
 │
 ├── .github/
 │   └── ISSUE_TEMPLATE/
@@ -400,16 +400,17 @@ Exact values for R1, R2, C1 and C2 are worked through in [report/JOURNAL.md](rep
 
 ---
 
-## 14. License
+## 14. Licence
 
-This is an engineering report, not software. It is released under CC BY-NC-ND 4.0, which permits sharing with attribution but not commercial use or derivatives. See [LICENSE](LICENSE).
+This is an engineering report, not software. I released it under CC BY-NC-ND 4.0, which permits sharing with attribution but not commercial use or derivatives. See [LICENSE](LICENSE).
 
 ---
 
 ## 15. Attribution
 
-Lead designer: Isaac "Zac" Adjei
+> [!NOTE]
+> Lead designer: Isaac "Zac" Adjei
+>
+> Repository: [github.com/zaccesss/two-stage-audio-amplifier](https://github.com/zaccesss/two-stage-audio-amplifier)
 
-Repository: [github.com/zaccesss/two-stage-audio-amplifier](https://github.com/zaccesss/two-stage-audio-amplifier)
-
-Last updated: May 2026
+Last updated: August 2026
