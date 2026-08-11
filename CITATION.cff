@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it as below.
+title: Two-Stage Audio Amplifier
+authors:
+  - family-names: Adjei
+    given-names: Isaac
+    website: https://isaacadjei.me
+version: 0.1.0
+date-released: "2026-05-01"
+repository-code: https://github.com/zaccesss/two-stage-audio-amplifier
+license: CC-BY-NC-ND-4.0
+type: software
+keywords:
+  - audio amplifier
+  - analogue electronics
+  - operational amplifiers
+  - PCB design
+  - Proteus

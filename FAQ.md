@@ -8,7 +8,7 @@
 
 **What is this project?**
 
-A two-stage audio amplifier that takes a line-level signal from a mobile phone headphone output and drives an 8 Ω speaker. The design was completed from hand calculations through Proteus SPICE simulation, breadboard prototyping and a final custom PCB.
+A two-stage audio amplifier I built that takes a line-level signal from a mobile phone headphone output and drives an 8 Ω speaker. I completed the design from hand calculations through Proteus SPICE simulation, breadboard prototyping and a final custom PCB.
 
 **What are the two stages?**
 
@@ -16,7 +16,7 @@ Stage 1 is an inverting active band-pass filter built around a TL071CP operation
 
 Stage 2 is a unity-gain power buffer built around an OPA551PA operational amplifier. It replicates the Stage 1 output voltage at high current, providing the drive capability needed to power an 8 Ω speaker load.
 
-**What audio source was used?**
+**What audio source did I use?**
 
 An iPhone 14 Pro Max, characterised at 440 Hz with a measured output of 0.872 Vpp.
 
@@ -42,19 +42,19 @@ Yes. The lower cutoff frequency (fL = 5 Hz) is set by R2 and C2. The upper cutof
 
 **What supply voltage does the circuit use?**
 
-The final design uses a single supply. The TL071 bias network sets a virtual mid-supply reference at Vcc/2. The supply voltage must be within the operating range of both ICs. Refer to the TL071 and OPA551 datasheets for minimum and maximum supply limits.
+My final design uses a single supply. The TL071 bias network sets a virtual mid-supply reference at Vcc/2. The supply voltage must be within the operating range of both ICs. Refer to the TL071 and OPA551 datasheets for minimum and maximum supply limits.
 
-**What is the 470 nF capacitor used during testing?**
+**What is the 470 nF capacitor I used during testing?**
 
-A 470 nF capacitor was connected in series with the oscilloscope probe tip to AC-couple the measurement. This removes the DC bias offset present in the single-supply design output and allows the oscilloscope to display the AC signal cleanly.
+I connected a 470 nF capacitor in series with the oscilloscope probe tip to AC-couple the measurement. This removes the DC bias offset present in the single-supply design output and lets the oscilloscope display the AC signal cleanly.
 
 ---
 
 ## Simulation and Tools
 
-**What software was used?**
+**What software did I use?**
 
-Proteus was used for schematic capture, PCB layout and SPICE frequency sweep and time-domain simulation. Microsoft Excel was used for design calculations and frequency response data analysis. Microsoft Word was used for the technical report with IEEE formatting.
+I used Proteus for schematic capture, PCB layout and SPICE frequency sweep and time-domain simulation. I used Microsoft Excel for design calculations and frequency response data analysis. I used Microsoft Word for the technical report with IEEE formatting.
 
 **How do I open the Proteus design files?**
 
@@ -79,16 +79,15 @@ The full image gallery is at [media/GALLERY.md](media/GALLERY.md). It includes f
 
 **Can I reuse this design?**
 
-This is an engineering report, not software. It is released under CC BY-NC-ND 4.0, which permits sharing with attribution but not commercial use or derivatives. See [LICENSE](LICENSE) for terms.
+This is an engineering report, not software. I released it under CC BY-NC-ND 4.0, which permits sharing with attribution but not commercial use or derivatives. See [LICENSE](LICENSE) for terms.
 
 ---
 
 ## Contact and Support
 
-Open an issue in this repository for questions or corrections.
-
-You can also reach out directly at eng@isaacadjei.me.
+> [!TIP]
+> Open an issue in this repository for questions or corrections. You can also reach me directly at [eng@isaacadjei.me](mailto:eng@isaacadjei.me).
 
 <p align="center">
-  <b>Project Status:</b> Completed &nbsp;|&nbsp; <b>Last Updated:</b> May 2026
+  <b>Project Status:</b> Completed &nbsp;|&nbsp; <b>Last Updated:</b> August 2026
 </p>

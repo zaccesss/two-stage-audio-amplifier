@@ -27,12 +27,13 @@ I built this two-stage audio amplifier to take a line-level audio signal from a 
 ## Documentation Hub
 
 <p align="center">
-  <a href="DOCUMENTATION.md">📖 Documentation</a> &nbsp;•&nbsp;
-  <a href="FAQ.md">❓ FAQ</a> &nbsp;•&nbsp;
-  <a href="media/GALLERY.md">🖼️ Gallery</a> &nbsp;•&nbsp;
-  <a href="report/REPORT.md">📄 Full Report</a> &nbsp;•&nbsp;
-  <a href="report/JOURNAL.md">📓 Journal</a> &nbsp;•&nbsp;
-  <a href="CONTRIBUTING.md">🤝 Contributing</a>
+  <a href="DOCUMENTATION.md">Documentation</a> &nbsp;•&nbsp;
+  <a href="FAQ.md">FAQ</a> &nbsp;•&nbsp;
+  <a href="media/GALLERY.md">Gallery</a> &nbsp;•&nbsp;
+  <a href="report/REPORT.md">Full Report</a> &nbsp;•&nbsp;
+  <a href="report/JOURNAL.md">Journal</a> &nbsp;•&nbsp;
+  <a href="CONTRIBUTING.md">Contributing</a> &nbsp;•&nbsp;
+  <a href="CITATION.cff">Citation</a>
 </p>
 
 ---
@@ -78,28 +79,13 @@ I verified frequency response across the full audio band on both breadboard and 
 
 ## Tech Stack
 
-<p align="center">
-  <img src="media/assets/proteus.jpg" alt="Proteus EDA" width="65" title="Proteus">
-  &nbsp;&nbsp;
-  <img src="media/assets/github-icon.svg" alt="GitHub" width="65" title="GitHub">
-  &nbsp;&nbsp;
-  <img src="media/assets/git-icon.svg" alt="Git" width="65" title="Git">
-  &nbsp;&nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" width="65" title="VS Code">
-  &nbsp;&nbsp;
-  <img src="media/assets/excel-icon.png" alt="Microsoft Excel" width="65" title="Microsoft Excel">
-  &nbsp;&nbsp;
-  <img src="media/assets/word-icon.png" alt="Microsoft Word" width="65" title="Microsoft Word">
-</p>
+<div align="center">
 
-<p align="center">
-  <b>Proteus</b> &nbsp;&nbsp;&nbsp;&nbsp;
-  <b>GitHub</b> &nbsp;&nbsp;&nbsp;&nbsp;
-  <b>Git</b> &nbsp;&nbsp;&nbsp;&nbsp;
-  <b>VS Code</b> &nbsp;&nbsp;&nbsp;&nbsp;
-  <b>Excel</b> &nbsp;&nbsp;&nbsp;&nbsp;
-  <b>Word</b>
-</p>
+| <img src="media/assets/proteus.jpg" alt="Proteus" width="60" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" width="60" /> | <img src="https://techstack-generator.vercel.app/github-icon.svg" alt="GitHub" width="60" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" width="60" /> | <img src="https://cdn.simpleicons.org/microsoftexcel/217346" alt="Microsoft Excel" width="60" /> | <img src="https://cdn.simpleicons.org/microsoftword/2B579A" alt="Microsoft Word" width="60" /> |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Proteus** | **Git** | **GitHub** | **VS Code** | **Excel** | **Word** |
+
+</div>
 
 ---
 
@@ -141,14 +127,22 @@ two-stage-audio-amplifier/
 
 ---
 
+## Citing This Work
+
+> [!NOTE]
+> I am registering this repository with Zenodo so it has a permanent, citable DOI. See [CITATION.cff](CITATION.cff) for the full citation. Use the "Cite this repository" option on GitHub or the badge below once the DOI is live.
+>
+> [![DOI](https://zenodo.org/badge/DOI/PENDING.svg)](https://doi.org/PENDING)
+
 ## Contact
 
-Isaac "Zac" Adjei
-
-- GitHub: [zaccesss](https://github.com/zaccesss)
-- Website: [isaacadjei.me](https://isaacadjei.me)
-- Email: eng@isaacadjei.me
+> [!TIP]
+> I am Isaac "Zac" Adjei. If you have questions about this project, reach me through any of the following:
+>
+> - GitHub: [zaccesss](https://github.com/zaccesss)
+> - Website: [isaacadjei.me](https://isaacadjei.me)
+> - Email: [eng@isaacadjei.me](mailto:eng@isaacadjei.me)
 
 <p align="center">
-  <b>Project Status:</b> Completed &nbsp;|&nbsp; <b>Last Updated:</b> May 2026
+  <b>Project Status:</b> Completed &nbsp;|&nbsp; <b>Last Updated:</b> August 2026
 </p>
