@@ -1,7 +1,7 @@
 # Two-Stage Audio Amplifier: Project Journal
 
-**Author:** Isaac "Zac" Adjei
-**Project window:** January to March 2026
+**Author:** Isaac "Zac" Adjei  
+**Project window:** January to March 2026  
 **GitHub published:** May 2026
 
 > A retrospective account of the full project from brief to GitHub publication. Written as source material for a portfolio article or blog post.
