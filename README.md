@@ -2,8 +2,8 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge">
-  <a href="https://doi.org/10.5281/zenodo.21903758">
-    <img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21903758-blue?style=for-the-badge">
+  <a href="https://doi.org/10.5281/zenodo.21903757">
+    <img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21903757-blue?style=for-the-badge">
   </a>
 </p>
 
@@ -123,7 +123,7 @@ two-stage-audio-amplifier/
 ## Citing This Work
 
 > [!NOTE]
-> This repository is registered with Zenodo and has a permanent, citable DOI: [10.5281/zenodo.21903758](https://doi.org/10.5281/zenodo.21903758). See [CITATION.cff](CITATION.cff) for the full citation. The "Cite this repository" option on GitHub can also be used.
+> This repository is registered with Zenodo and has a permanent, citable DOI: [10.5281/zenodo.21903757](https://doi.org/10.5281/zenodo.21903757). See [CITATION.cff](CITATION.cff) for the full citation. The "Cite this repository" option on GitHub can also be used.
 
 ## Contact
 
