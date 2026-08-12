@@ -1,11 +1,9 @@
 # Two-Stage Audio Amplifier
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge">
-  <a href="https://doi.org/10.5281/zenodo.21903757">
-    <img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21903757-blue?style=for-the-badge">
-  </a>
-</p>
+[![Status](https://img.shields.io/badge/status-completed-brightgreen.svg)](CHANGELOG.md)
+[![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-0.1.2-blue.svg)](CHANGELOG.md)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21903757-blue.svg)](https://doi.org/10.5281/zenodo.21903757)
 
 This two-stage audio amplifier takes a line-level audio signal from a mobile phone and drives an 8 Ω speaker. The design was taken from initial hand calculations through Proteus SPICE simulation, breadboard prototyping on both dual and single supply and a final custom PCB.
 
