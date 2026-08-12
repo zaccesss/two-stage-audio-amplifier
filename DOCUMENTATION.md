@@ -402,7 +402,8 @@ Exact values for R1, R2, C1 and C2 are worked through in [report/JOURNAL.md](rep
 
 ## 14. Licence
 
-This is an engineering report, not software. It is released under CC BY-NC-ND 4.0, which permits sharing with attribution but not commercial use or derivatives. See [LICENSE](LICENSE).
+> [!NOTE]
+> This is an engineering report, not software. It is released under CC BY-NC-ND 4.0, which permits sharing with attribution but not commercial use or derivatives. See [LICENSE](LICENSE).
 
 ---
 

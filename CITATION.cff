@@ -6,10 +6,10 @@ authors:
     given-names: Isaac
     website: https://isaacadjei.me
 version: 0.1.0
-date-released: "2026-05-01"
+date-released: "2026-05-09"
 repository-code: https://github.com/zaccesss/two-stage-audio-amplifier
 license: CC-BY-NC-ND-4.0
-type: software
+type: generic
 keywords:
   - audio amplifier
   - analogue electronics
