@@ -5,9 +5,9 @@ authors:
   - family-names: Adjei
     given-names: Isaac
     website: https://isaacadjei.me
-version: 0.1.1
+version: 0.1.2
 date-released: "2026-08-12"
-doi: 10.5281/zenodo.21903758
+doi: 10.5281/zenodo.21903757
 repository-code: https://github.com/zaccesss/two-stage-audio-amplifier
 license: CC-BY-NC-ND-4.0
 type: generic
