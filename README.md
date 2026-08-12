@@ -2,8 +2,8 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge">
-  <a href="CITATION.cff">
-    <img src="https://img.shields.io/badge/DOI-pending-lightgrey?style=for-the-badge">
+  <a href="https://doi.org/10.5281/zenodo.21903757">
+    <img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21903757-blue?style=for-the-badge">
   </a>
 </p>
 
@@ -123,9 +123,7 @@ two-stage-audio-amplifier/
 ## Citing This Work
 
 > [!NOTE]
-> This repository is being registered with Zenodo so it has a permanent, citable DOI. See [CITATION.cff](CITATION.cff) for the full citation. The "Cite this repository" option on GitHub can also be used.
->
-> Once the DOI is live, the badge at the top of this page will link straight to the Zenodo record.
+> This repository is registered with Zenodo and has a permanent, citable DOI: [10.5281/zenodo.21903757](https://doi.org/10.5281/zenodo.21903757). See [CITATION.cff](CITATION.cff) for the full citation. The "Cite this repository" option on GitHub can also be used.
 
 ## Contact
 

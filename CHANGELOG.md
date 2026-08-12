@@ -7,12 +7,13 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
-## [Unreleased]
+## [0.1.1] - 2026-08-12
 
 ### Added
 
 - Community health files, markdown lint configuration and issue and pull request templates
-- CITATION.cff and a Citing This Work section, ahead of registering the repository with Zenodo
+- CITATION.cff and a Citing This Work section
+- Registered the repository with Zenodo for a permanent, citable DOI
 
 ### Changed
 
