@@ -1,0 +1,48 @@
+name: Bug report
+description: Report an error or issue in the project files
+title: "fix: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: Describe the problem clearly.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+      description: What should happen instead?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: input
+    id: tool-version
+    attributes:
+      label: Tool or software version
+    validations:
+      required: false
+  - type: input
+    id: file-affected
+    attributes:
+      label: File affected
+    validations:
+      required: false
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or screenshots
+      description: Paste any relevant output, error messages or screenshots here.
+    validations:
+      required: false

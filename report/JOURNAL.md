@@ -237,7 +237,7 @@ The 3 Vpp target was met. Stage 2 output matched the calculated value to within 
 The technical report was written in Microsoft Word with IEEE formatting throughout.
 
 Key challenges:
-- **Page limit:** strict 15-page maximum including appendices. Attempt 1 was 20 pages and lost marks. 
+- **Page limit:** strict 15-page maximum including appendices. Attempt 1 was 20 pages and lost marks.
 - **Referencing:** 14 references cited in body text. Two TI application notes (SLOA058 and SLOD006B) had broken URLs after TI reorganised their site - cited by document number only.
 - **Graphs:** simulation as smooth lines (501 data points), measured data as markers only. No titles inside the figure area.
 
