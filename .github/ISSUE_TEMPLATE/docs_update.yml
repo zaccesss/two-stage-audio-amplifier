@@ -1,0 +1,35 @@
+name: Docs update
+description: Suggest a correction or improvement to documentation
+title: "docs: "
+labels: ["documentation"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What
+      description: Which document or section needs updating?
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why
+      description: What is incorrect or missing and why does it matter?
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance criteria
+      placeholder: |
+        - [ ] The change is made and verified
+        - [ ] Related cross-references are updated if needed
+    validations:
+      required: false
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Any additional context, links or references.
+    validations:
+      required: false
