@@ -2,9 +2,6 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge">
-  <a href="https://doi.org/10.5281/zenodo.21903757">
-    <img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21903757-blue?style=for-the-badge">
-  </a>
 </p>
 
 This two-stage audio amplifier takes a line-level audio signal from a mobile phone and drives an 8 Ω speaker. The design was taken from initial hand calculations through Proteus SPICE simulation, breadboard prototyping on both dual and single supply and a final custom PCB.
