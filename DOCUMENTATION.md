@@ -117,9 +117,9 @@ The volume scale is not linear: output increases slowly at low steps and rises s
 | Input voltage | 0.872 Vpp at 440 Hz |
 | Output voltage target | 3 Vpp |
 | Speaker load | 8 Ω |
-| Lower cutoff frequency (fL) | 5 Hz |
+| Lower cutoff frequency (fL) | 6.63 Hz (5 Hz target) |
 | Upper cutoff frequency (fH) | 28.54 kHz |
-| Bandwidth | 28.535 kHz |
+| Bandwidth | 28.533 kHz |
 | Stage 1 IC | TL071CP |
 | Stage 2 IC | OPA551PA |
 | Feedback resistor (R5) | 82 kΩ |
@@ -361,7 +361,7 @@ Measurements were taken at 440 Hz using a TBS1052C oscilloscope. A 470 nF capaci
 |---|---|---|---|---|---|
 | Stage 1 output at 440 Hz | 3.0 Vpp | n/a | n/a | n/a | 3.000 Vpp |
 | Stage 2 output at 440 Hz | 3.0 Vpp | n/a | n/a | n/a | 2.980 Vpp |
-| Lower cutoff fL | 5 Hz | n/a | n/a | n/a | n/a |
+| Lower cutoff fL | 6.63 Hz | n/a | n/a | n/a | n/a |
 | Upper cutoff fH | 28.54 kHz | n/a | n/a | n/a | n/a |
 
 The full comparison table with calculated, simulated and measured data across all four test configurations is in the [full technical report](report/REPORT.md#42-pcb-testing).
@@ -372,7 +372,7 @@ The full comparison table with calculated, simulated and measured data across al
   <img src="media/images/human_hearing_range.png" alt="Human hearing range reference" width="600">
 </p>
 
-The amplifier passband (5 Hz to 28.54 kHz) covers the full range of human hearing (approximately 20 Hz to 20 kHz) with margin at both ends.
+The amplifier passband (6.63 Hz to 28.54 kHz) covers the full range of human hearing (approximately 20 Hz to 20 kHz) with margin at both ends.
 
 <p align="center">
   <img src="media/images/Phone characterisation graph.png" alt="iPhone audio output characterisation at 440 Hz" width="600">
