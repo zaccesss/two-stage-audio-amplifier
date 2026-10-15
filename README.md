@@ -33,7 +33,7 @@ This two-stage audio amplifier takes a line-level audio signal from a mobile pho
 
 The amplifier is two cascaded stages:
 
-- **Stage 1 (TL071 active band-pass filter):** provides frequency selectivity across the human hearing range (5 Hz to 28.54 kHz) and voltage gain, bringing the 0.87 Vpp phone output up to 3 Vpp.
+- **Stage 1 (TL071 active band-pass filter):** provides frequency selectivity across the human hearing range (6.63 Hz to 28.54 kHz) and voltage gain, bringing the 0.87 Vpp phone output up to 3 Vpp.
 - **Stage 2 (OPA551 unity-gain buffer):** replicates the Stage 1 output voltage at high current, driving the 8 Ω speaker without adding further gain.
 
 ---
@@ -46,7 +46,7 @@ The amplifier is two cascaded stages:
 | Input voltage | 0.872 Vpp at 440 Hz |
 | Output voltage | 3 Vpp at 440 Hz |
 | Speaker load | 8 Ω |
-| Lower cutoff frequency | 5 Hz |
+| Lower cutoff frequency | 6.63 Hz (5 Hz target) |
 | Upper cutoff frequency | 28.54 kHz |
 | Stage 1 IC | TL071CP |
 | Stage 2 IC | OPA551PA |
