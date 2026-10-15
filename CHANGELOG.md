@@ -7,6 +7,12 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [Unreleased]
+
+### Fixed
+
+- The lower cutoff frequency reads 6.63 Hz, the value set by the 1 µF capacitor used for C2, with 5 Hz kept as the design target, matching the report
+
 ## [0.1.2] - 2026-08-12
 
 ### Changed

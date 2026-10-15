@@ -38,7 +38,7 @@ The OPA551 can deliver up to ±200 mA continuous output current, which is needed
 
 **Can the cutoff frequencies be changed?**
 
-Yes. The lower cutoff frequency (fL = 5 Hz) is set by R2 and C2. The upper cutoff frequency (fH = 28.54 kHz) is set by R1 and C1. Changing either RC pair adjusts the corresponding cutoff. The exact component values are worked through in [report/JOURNAL.md](report/JOURNAL.md#4-design-calculations).
+Yes. The lower cutoff frequency (fL = 6.63 Hz, against a 5 Hz target) is set by R2 and C2. The upper cutoff frequency (fH = 28.54 kHz) is set by R1 and C1. Changing either RC pair adjusts the corresponding cutoff. The exact component values are worked through in [report/JOURNAL.md](report/JOURNAL.md#4-design-calculations).
 
 **What supply voltage does the circuit use?**
 
