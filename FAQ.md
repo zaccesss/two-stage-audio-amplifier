@@ -58,7 +58,7 @@ Proteus was used for schematic capture, PCB layout and SPICE frequency sweep and
 
 **How do I open the Proteus design files?**
 
-Proteus design files (`.pdsprj`) require Labcenter Electronics Proteus to open. The key schematic and PCB views are exported as PNG files in `design/proteus/exports/` for reference without needing Proteus installed.
+The repository does not carry the Proteus project file. The schematic, PCB layout, 3D view and simulation results are exported as PNG files in `media/images/`, so nothing needs Proteus installed to read them.
 
 **Where are the original Excel workbooks?**
 
@@ -90,5 +90,5 @@ The full image gallery is at [media/GALLERY.md](media/GALLERY.md). It includes f
 > Open an issue in this repository for questions or corrections. You can also reach me directly at [eng@isaacadjei.me](mailto:eng@isaacadjei.me).
 
 <p align="center">
-  <b>Project Status:</b> Completed &nbsp;|&nbsp; <b>Last Updated:</b> August 2026
+  <b>Project Status:</b> Completed &nbsp;|&nbsp; <b>Last Updated:</b> November 2026
 </p>

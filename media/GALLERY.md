@@ -75,6 +75,16 @@
 
   <tr>
     <td width="45%">
+      <b>PCB Layout in Proteus</b><br>
+      The layout as drawn in Proteus with the top silk screen on, showing every reference designator, the five test points and the board outline.
+    </td>
+    <td>
+      <img src="images/proteus_pcb_layout.png" width="100%">
+    </td>
+  </tr>
+
+  <tr>
+    <td width="45%">
       <b>3D Model - Top View</b><br>
       Proteus 3D render of the populated PCB from above, showing component heights and footprint placement.
     </td>
@@ -112,6 +122,16 @@
       <img src="images/Figure12_3D_Model(3).png" width="100%">
     </td>
   </tr>
+
+  <tr>
+    <td width="45%">
+      <b>3D Visualiser - Straight Down</b><br>
+      The Proteus 3D visualiser view used to check component fit before ordering the board.
+    </td>
+    <td>
+      <img src="images/proteus_3d_visualiser.png" width="100%">
+    </td>
+  </tr>
 </table>
 
 ---
@@ -125,7 +145,7 @@
       Complete two-stage schematic exported from Proteus, showing both the TL071 active filter stage and the OPA551 power buffer stage with the single-supply bias network.
     </td>
     <td>
-      <img src="../design/proteus/exports/schematic.png" width="100%">
+      <img src="images/full_schematic.png" width="100%">
     </td>
   </tr>
 
@@ -135,7 +155,7 @@
       Proteus SPICE frequency sweep result across the audio band, showing the band-pass response centred on the 5 Hz to 28.54 kHz passband.
     </td>
     <td>
-      <img src="../design/proteus/exports/freq response graph.png" width="100%">
+      <img src="images/proteus_frequency_response_simulation.png" width="100%">
     </td>
   </tr>
 
@@ -155,7 +175,7 @@
       Proteus time-domain output for the TL071 stage at 440 Hz, showing the amplified and phase-inverted output waveform.
     </td>
     <td>
-      <img src="../design/proteus/exports/analogue ana 1.png" width="100%">
+      <img src="images/proteus_stage1_440hz_simulation.png" width="100%">
     </td>
   </tr>
 
@@ -165,7 +185,7 @@
       Proteus time-domain output for the OPA551 buffer stage at 440 Hz.
     </td>
     <td>
-      <img src="../design/proteus/exports/analogue ana 2.png" width="100%">
+      <img src="images/proteus_stage2_440hz_simulation.png" width="100%">
     </td>
   </tr>
 </table>

@@ -1,9 +1,10 @@
 # Two-Stage Audio Amplifier
 
-[![Status](https://img.shields.io/badge/status-completed-brightgreen.svg)](CHANGELOG.md)
-[![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-0.1.2-blue.svg)](CHANGELOG.md)
+[![Release](https://img.shields.io/github/v/release/zaccesss/two-stage-audio-amplifier?label=release)](https://github.com/zaccesss/two-stage-audio-amplifier/releases/latest)
+[![Licence: CC BY-NC-ND 4.0](https://img.shields.io/badge/licence-CC%20BY--NC--ND%204.0-lightgrey.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-0.2.0-blue.svg)](CHANGELOG.md)
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21903757-blue.svg)](https://doi.org/10.5281/zenodo.21903757)
+[![Status](https://img.shields.io/badge/status-completed-brightgreen.svg)](CHANGELOG.md)
 
 This two-stage audio amplifier takes a line-level audio signal from a mobile phone and drives an 8 Ω speaker. The design was taken from initial hand calculations through Proteus SPICE simulation, breadboard prototyping on both dual and single supply and a final custom PCB.
 
@@ -35,6 +36,31 @@ The amplifier is two cascaded stages:
 
 - **Stage 1 (TL071 active band-pass filter):** provides frequency selectivity across the human hearing range (6.63 Hz to 28.54 kHz) and voltage gain, bringing the 0.87 Vpp phone output up to 3 Vpp.
 - **Stage 2 (OPA551 unity-gain buffer):** replicates the Stage 1 output voltage at high current, driving the 8 Ω speaker without adding further gain.
+
+## Signal Flow
+
+```mermaid
+flowchart LR
+    subgraph SOURCE["Source"]
+        PHONE["Phone headphone output<br/>0.87 Vpp line level at 440 Hz"]
+    end
+    subgraph STAGE1["Stage 1: TL071"]
+        BPF["Active band-pass filter<br/>6.63 Hz to 28.54 kHz<br/>gain set by the 82 kΩ feedback resistor"]
+    end
+    subgraph STAGE2["Stage 2: OPA551"]
+        BUF["Unity-gain buffer<br/>same voltage, speaker current"]
+    end
+    subgraph LOAD["Load"]
+        SPK["8 Ω speaker"]
+    end
+    PHONE -- "J1 jack socket, C2 and C6 coupling" --> BPF
+    BPF -- "3 Vpp" --> BUF
+    BUF -- "C8 output coupling, 3 Vpp" --> SPK
+    PSU["Single supply<br/>R3 and R4 bias the input to Vcc/2"] -. "powers both stages" .-> BPF
+    PSU -. "powers both stages" .-> BUF
+```
+
+Stage 1 sets the passband and the gain. Stage 2 adds no gain; it only supplies the current an 8 Ω load needs. The block diagrams in [media/block-diagrams](media/block-diagrams) show the same chain with the bias and power sections drawn in.
 
 ---
 
@@ -98,11 +124,8 @@ Frequency response was verified across the full audio band on both breadboard an
 
 ```
 two-stage-audio-amplifier/
-├── design/
-│   └── proteus/
-│       └── exports/       Schematic, PCB layout and simulation exports (PNG)
 ├── media/
-│   ├── images/             Circuit figures, PCB photographs and oscilloscope traces
+│   ├── images/             Circuit figures, Proteus exports, PCB photographs and oscilloscope traces
 │   ├── block-diagrams/     System block diagrams and design flowcharts
 │   ├── assets/             Icons used in this README
 │   └── GALLERY.md          Curated image gallery with descriptions
@@ -133,5 +156,5 @@ two-stage-audio-amplifier/
 > - Email: [eng@isaacadjei.me](mailto:eng@isaacadjei.me)
 
 <p align="center">
-  <b>Project Status:</b> Completed &nbsp;|&nbsp; <b>Last Updated:</b> August 2026
+  <b>Project Status:</b> Completed &nbsp;|&nbsp; <b>Last Updated:</b> November 2026
 </p>
