@@ -9,6 +9,18 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-11-03
+
+### Added
+
+- A signal-flow diagram in the README: phone source, TL071 band-pass stage, OPA551 buffer and the 8 Ω speaker
+- The Proteus PCB layout and 3D views as images in `media/images/`
+
+### Changed
+
+- The Proteus exports live in `media/images/` with the other figures and the `design/` folder is gone; the duplicate schematic export is removed
+- Routine tidy-up
+
 ### Fixed
 
 - The lower cutoff frequency reads 6.63 Hz, the value set by the 1 µF capacitor used for C2, with 5 Hz kept as the design target, matching the report

@@ -520,6 +520,6 @@ Possible improvements for future iterations:
 
 The full circuit schematic for the two-stage audio amplifier is presented below. The schematic was exported from Proteus and shows the complete circuit including all biasing, coupling, decoupling and protection components.
 
-![Figure 18: Full circuit schematic of the two-stage audio amplifier](../design/proteus/exports/schematic.png)
+![Figure 18: Full circuit schematic of the two-stage audio amplifier](../media/images/full_schematic.png)
 
 *Figure 18: Full circuit schematic of the two-stage audio amplifier exported from Proteus*

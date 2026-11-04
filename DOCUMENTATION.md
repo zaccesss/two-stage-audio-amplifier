@@ -60,16 +60,11 @@ two-stage-audio-amplifier/
 ├── LICENSE                         CC BY-NC-ND 4.0 licence
 │
 ├── .github/
-│   └── ISSUE_TEMPLATE/
-│       ├── bug_report.md           Bug report template
-│       └── docs_update.md          Documentation update template
-│
-├── design/
-│   └── proteus/
-│       └── exports/                PNG exports from Proteus
+│   ├── ISSUE_TEMPLATE/             Bug report, documentation update and feature request forms
+│   └── workflows/                  Markdown lint workflow
 │
 ├── media/
-│   ├── images/                     Circuit figures and PCB photographs
+│   ├── images/                     Circuit figures, Proteus exports and PCB photographs
 │   ├── block-diagrams/             System block diagrams and flowcharts
 │   └── GALLERY.md                  Curated image gallery
 │
@@ -230,7 +225,7 @@ During oscilloscope measurements a 470 nF capacitor was used as an AC-coupling e
 The full circuit was drawn in Proteus schematic capture before simulation or PCB layout. Both stages, the single-supply bias network and all passive components are shown.
 
 <p align="center">
-  <img src="design/proteus/exports/schematic.png" alt="Full circuit schematic exported from Proteus" width="750">
+  <img src="media/images/full_schematic.png" alt="Full circuit schematic exported from Proteus" width="750">
 </p>
 
 ### 9.2 Frequency Response Simulation
@@ -238,7 +233,7 @@ The full circuit was drawn in Proteus schematic capture before simulation or PCB
 The frequency response was simulated using Proteus SPICE frequency sweep analysis. 501 data points were captured across the audio band to produce smooth curves. Simulation data was exported to Excel and plotted alongside breadboard and PCB measured data for direct comparison.
 
 <p align="center">
-  <img src="design/proteus/exports/freq response graph.png" alt="Simulated frequency response" width="700">
+  <img src="media/images/proteus_frequency_response_simulation.png" alt="Simulated frequency response" width="700">
 </p>
 
 <p align="center">
@@ -252,11 +247,11 @@ The combined frequency response chart above overlays four data series: Stage 1 s
 Time-domain simulation at 440 Hz was used to verify output waveform shape and amplitude for both stages.
 
 <p align="center">
-  <img src="design/proteus/exports/analogue ana 1.png" alt="Stage 1 time-domain simulation at 440 Hz" width="650">
+  <img src="media/images/proteus_stage1_440hz_simulation.png" alt="Stage 1 time-domain simulation at 440 Hz" width="650">
 </p>
 
 <p align="center">
-  <img src="design/proteus/exports/analogue ana 2.png" alt="Stage 2 time-domain simulation at 440 Hz" width="650">
+  <img src="media/images/proteus_stage2_440hz_simulation.png" alt="Stage 2 time-domain simulation at 440 Hz" width="650">
 </p>
 
 > [!NOTE]
@@ -278,9 +273,13 @@ The PCB was designed in Proteus PCB layout following schematic capture. Both the
   <img src="media/images/Figure11_PCB_Bottom.png" alt="PCB bottom copper layer" width="500">
 </p>
 
+<p align="center">
+  <img src="media/images/proteus_pcb_layout.png" alt="PCB layout in Proteus with the top silk screen showing reference designators and test points" width="600">
+</p>
+
 ### 10.2 3D Model
 
-Proteus generates a 3D model from the PCB layout. Three views are shown below.
+Proteus generates a 3D model from the PCB layout. Four views from the report are shown below, followed by the visualiser view used to check component fit.
 
 <p align="center">
   <img src="media/images/Figure12_3D_Model.png" alt="PCB 3D model - top view" width="450">
@@ -292,6 +291,10 @@ Proteus generates a 3D model from the PCB layout. Three views are shown below.
   <img src="media/images/Figure12_3D_Model(2).png" alt="PCB 3D model - front view" width="450">
   &nbsp;
   <img src="media/images/Figure12_3D_Model(3).png" alt="PCB 3D model - rear view" width="450">
+</p>
+
+<p align="center">
+  <img src="media/images/proteus_3d_visualiser.png" alt="Proteus 3D visualiser view of the populated board from above" width="600">
 </p>
 
 ---
@@ -414,4 +417,4 @@ Exact values for R1, R2, C1 and C2 are worked through in [report/JOURNAL.md](rep
 >
 > Repository: [github.com/zaccesss/two-stage-audio-amplifier](https://github.com/zaccesss/two-stage-audio-amplifier)
 
-Last updated: August 2026
+Last updated: November 2026
