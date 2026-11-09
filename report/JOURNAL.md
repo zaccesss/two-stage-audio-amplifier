@@ -93,16 +93,15 @@ Before any calculations, the iPhone 14 Pro Max was characterised at 440 Hz (the 
 
 | Volume step | Measured Vpp |
 |---|---|
-| 1 | 48 mV |
-| 2 | 56 mV |
-| 3 | 72 mV |
-| 4 | 104 mV |
-| 5 | 152 mV |
-| 6 | 208 mV |
-| 7 | 320 mV |
-| 8 | 448 mV |
-| 9 | 624 mV |
-| 10 | 872 mV |
+| 1 to 6 | 48 mV |
+| 7 | 56 mV |
+| 8 | 72 mV |
+| 9 | 104 mV |
+| 10 | 152 mV |
+| 11 | 208 mV |
+| 12 | 320 mV |
+| 13 | 448 mV |
+| 14 | 624 mV |
 | 15 | 872 mV (chosen design point) |
 | 16 | 1.224 V (maximum) |
 
@@ -141,12 +140,12 @@ fH(actual) = 1 / (2π × 82000 × 68×10⁻¹²) = 28,542 Hz
 
 **Output power at 3 Vpp:**
 ```
-P = 3² / (8 × 8) = 281 mW into 8 Ω
+P = 3² / (8 × 8) = 141 mW average into 8 Ω (281 mW at the peak)
 ```
 
 **Bias network:**
 - R3 = R4 = 24 kΩ (voltage divider sets Vcc/2 = ~4.5 V on 9 V supply)
-- C8 = 2200 µF output coupling (fC = 9.05 Hz with 8 Ω load - well below audible range)
+- C8 = 2200 µF output coupling (fC = 9.04 Hz with 8 Ω load - below the audible range)
 
 ---
 
@@ -226,7 +225,8 @@ Mounted on a 3 mm acrylic baseplate using M3 nylon hex standoffs at four corners
 | Stage | Input | Output | Gain |
 |---|---|---|---|
 | Stage 1 (TL071) | 0.868 Vpp | 3.000 Vpp | 10.77 dB |
-| Stage 2 (OPA551) | 0.872 Vpp | 2.980 Vpp | 10.67 dB |
+| Stage 2 output against the phone input | 0.872 Vpp | 2.980 Vpp | 10.67 dB overall |
+| Stage 2 (OPA551) alone | 3.000 Vpp | 2.980 Vpp | about -0.06 dB |
 
 The 3 Vpp target was met. Stage 2 output matched the calculated value to within 0.67%.
 
@@ -249,7 +249,7 @@ Key challenges:
 
 | Parameter | Calculated | Simulated | Dual BB | Single BB | PCB Stage 1 | PCB Stage 2 |
 |---|---|---|---|---|---|---|
-| Gain (dB) | 10.67 | 10.67 | ~10.58 | ~10.81 | ~10.73 | 10.67 |
+| Gain (dB) | 10.67 | 10.67 | ~10.58 | ~10.81 | 10.77 | 10.67 |
 | Lower cut-off (Hz) | 6.63 | 6.60 | ~7.2 | ~6.8 | ~6.9 | ~13.2 |
 | Upper cut-off (kHz) | 28.54 | 27.7 | ~26.0 | ~27.1 | ~29.5 | ~30.0 |
 
@@ -261,7 +261,7 @@ The PCB Stage 2 lower cut-off of ~13.2 Hz is higher than design because C8 and t
 
 **Technical:**
 - Single-supply biasing is the central design challenge for portable audio. Every decision about bias voltage, decoupling and AC coupling flows from getting Vcc/2 right.
-- Capacitor tolerances (±20%) matter more than resistor tolerances (±1%) for cut-off frequency accuracy. C2 being rounded from 1.326 µF to 1 µF shifted fL from 5 Hz to 6.63 Hz - still within the audible range but worth understanding.
+- Capacitor tolerances (±20%) matter more than resistor tolerances (±1%) for cut-off frequency accuracy. C2 being rounded from 1.326 µF to 1 µF shifted fL from 5 Hz to 6.63 Hz - still below the audible range but worth understanding.
 - PCB decoupling placement is not optional. A 100 nF capacitor even one centimetre from the supply pin is measurably less effective than one sitting directly on it.
 - Photograph every build stage. These photographs saved hours of report writing.
 
@@ -292,7 +292,7 @@ Published to GitHub in May 2026 after the official mark was confirmed. Publishin
 
 Repository: [github.com/zaccesss/two-stage-audio-amplifier](https://github.com/zaccesss/two-stage-audio-amplifier)
 
-All binary files (PDF report, Excel workbooks) were replaced with markdown before publication because the original files contained private credentials. All technical content is preserved in the markdown files.
+All binary files (PDF report, Excel workbooks) were replaced with markdown before publication because the original files held personal details and course material. All technical content is preserved in the markdown files.
 
 The GitHub workflow was practised deliberately on every change - issue, branch, commit, push, PR, merge, delete branch - to build the habit before Year 2.
 

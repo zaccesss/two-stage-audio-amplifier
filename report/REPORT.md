@@ -199,7 +199,7 @@ Operational amplifiers are conventionally operated from a dual supply, which all
 | Upper cut-off frequency | Target: 29 kHz / Actual: 28.54 kHz | Limited by available stock capacitor C1 = 68 pF |
 | Measured gain | Target: 10.73 dB / Actual: 10.67 dB | Voltage gain ratio 3.42 V/V; R1 = 82 kΩ given; R2 = 24 kΩ nearest stock value |
 | Target output voltage | 3 Vpp | Across 8 Ω speaker load |
-| Output power | 281 mW | P = Vpp² / (8 × R) = 9 / 64 |
+| Output power | 141 mW | P = Vpp² / (8 × R) = 9 / 64 |
 | Speaker load | 8 Ω | Impedance approximated as resistive |
 | Maximum output current | ±200 mA | OPA551PA rated continuous output current [2] |
 | Key ICs | TL071CP, OPA551PA | Stage 1: TL071 active filter; Stage 2: OPA551 unity-gain buffer |
@@ -290,7 +290,7 @@ fH(actual) = 1 / (2π × R1 × C1) = 1 / (2π × 82000 × 68×10⁻¹²)
 **Output power:**
 
 ```
-P = Vpp² / (8 × R) = 9 / (8 × 8) = 0.281 W = 281 mW                    (14)
+P = Vpp² / (8 × R) = 9 / (8 × 8) = 0.141 W = 141 mW                    (14)
 ```
 
 **LED current-limiting resistor R6:**
@@ -306,10 +306,10 @@ A supply voltage of 12 V was used for worst-case conditions. A forward voltage o
 The output coupling capacitor C8 forms a high-pass RC filter with the speaker load:
 
 ```
-fC = 1 / (2π × C8 × RL) = 1 / (2π × 2200×10⁻⁶ × 8) = 9.05 Hz          (16)
+fC = 1 / (2π × C8 × RL) = 1 / (2π × 2200×10⁻⁶ × 8) = 9.04 Hz          (16)
 ```
 
-This cut-off frequency of 9.05 Hz is below the active filter lower cut-off of 6.63 Hz, ensuring C8 does not restrict audible performance within the intended passband.
+This cut-off frequency of 9.04 Hz is above the active filter lower cut-off of 6.63 Hz, so the two poles combine and raise the overall lower cut-off to about 12 Hz. That is still below 20 Hz, so C8 does not restrict audible performance within the intended passband.
 
 ### 3.4 Detailed Circuit Description
 
@@ -321,7 +321,7 @@ Single-supply operation is achieved by biasing pin 3 of U1 to half the supply vo
 
 The second stage uses U2, an OPA551PA configured as a unity-gain voltage follower with its output connected directly to its inverting input. The output coupling capacitor C8 (2200 µF) is connected in series between pin 6 of U2 and the speaker output terminal LS1. This blocks the DC bias voltage from the speaker load, which would otherwise waste power and potentially damage the voice coil.
 
-Diodes D2 and D3, both 1N4007 silicon rectifier diodes, provide protection against reverse polarity connection of the power supply [4, 5]. D3 is in series with the positive supply rail, becoming reverse biased under reversed polarity. D2 is connected between the output of U2 and ground, clamping any negative voltage spike to approximately -0.7 V.
+Diodes D2 and D3, both 1N4007 silicon rectifier diodes, protect the output of U2 [4, 5]. D3 is connected between the output of U2 and the positive supply rail, clamping any spike above the rail to about 0.7 V over it. D2 is connected between the output of U2 and ground, clamping any negative voltage spike to approximately -0.7 V.
 
 The power indicator LED D1 is connected in series with R6 (3.3 kΩ) between the positive supply rail and ground. When SW1 is closed, current flows through R6 and D1, providing visual indication that the amplifier is powered.
 
@@ -375,13 +375,13 @@ For the dual-supply breadboard measurement, the first stage was powered from a d
 
 ### 4.1 Breadboard Prototype Testing
 
-The frequency response of the first amplifier stage was measured on breadboard with a dual ±9 V power supply. The simulated and measured results are shown in Figure 13. The simulated and measured midband gain at 440 Hz were both 10.67 dB, demonstrating exact agreement. The simulated lower cut-off frequency was 6.6 Hz and the measured value was approximately 7.2 Hz, in close agreement with the calculated value of 6.63 Hz. The simulated upper cut-off frequency was 27.7 kHz and the measured value was approximately 26.0 kHz. The small discrepancy between simulated and measured cut-off frequencies is attributable to component tolerances.
+The frequency response of the first amplifier stage was measured on breadboard with a dual ±9 V power supply. The simulated and measured results are shown in Figure 13. The simulated midband gain at 440 Hz was 10.67 dB and the measured value was approximately 10.58 dB, in close agreement. The simulated lower cut-off frequency was 6.6 Hz and the measured value was approximately 7.2 Hz, in close agreement with the calculated value of 6.63 Hz. The simulated upper cut-off frequency was 27.7 kHz and the measured value was approximately 26.0 kHz. The small discrepancy between simulated and measured cut-off frequencies is attributable to component tolerances.
 
 ![Figure 13: Simulated and measured frequency response of the first amplifier stage on breadboard with dual ±9 V power supply](../media/images/Figure13_DualSupply_Breadboard.png)
 
 *Figure 13: Simulated and measured frequency response of Stage 1 on breadboard with dual ±9 V power supply*
 
-Figure 14 shows the simulated and measured frequency response of the complete amplifier on breadboard with a single 9 V power supply. The measured midband gain at 440 Hz was 10.78 dB, in close agreement with the calculated value of 10.67 dB. The measured lower cut-off frequency was approximately 6.8 Hz and the measured upper cut-off frequency was approximately 27.1 kHz.
+Figure 14 shows the simulated and measured frequency response of the complete amplifier on breadboard with a single 9 V power supply. The measured midband gain at 440 Hz was approximately 10.81 dB, in close agreement with the calculated value of 10.67 dB. The measured lower cut-off frequency was approximately 6.8 Hz and the measured upper cut-off frequency was approximately 27.1 kHz.
 
 ![Figure 14: Simulated and measured frequency response of the complete two-stage amplifier on breadboard with single 9 V power supply](../media/images/Figure14_SingleSupply_Breadboard.png)
 
@@ -401,7 +401,7 @@ The simulated and measured results for both stages are shown in Figure 15.
 
 | Parameter | Calculated | Simulated | Dual Supply BB | Single Supply BB | PCB Stage 1 | PCB Stage 2 |
 |---|---|---|---|---|---|---|
-| Gain (dB) | 10.67 | 10.67 | ~10.58 | ~10.81 | ~10.73 | 10.67 |
+| Gain (dB) | 10.67 | 10.67 | ~10.58 | ~10.81 | 10.77 | 10.67 |
 | Lower cut-off (Hz) | 6.63 | 6.60 | ~7.2 | ~6.8 | ~6.9 | ~13.2 |
 | Upper cut-off (kHz) | 28.54 | 27.7 | ~26.0 | ~27.1 | ~29.5 | ~30.0 |
 | Bandwidth (kHz) | 28.53 | 27.7 | ~26.0 | ~27.1 | ~29.5 | ~30.0 |
@@ -412,7 +412,7 @@ The midband gain results show excellent consistency across all test conditions, 
 
 In Figure 16(c), CH1 records an input of 868 mVpp at 440 Hz and CH2 records a Stage 1 output of 3.000 Vpp measured via a 470 nF external coupling capacitor. The measured voltage gain at Stage 1 is therefore 3.000 / 0.868 = 3.456, equivalent to 10.77 dB.
 
-In Figure 16(d), CH1 records an input of 872 mVpp and CH2 records a Stage 2 output of 2.980 Vpp. The voltage gain at Stage 2 is therefore 2.980 / 0.872 = 3.418, equivalent to 10.67 dB, in exact agreement with the calculated and simulated values.
+In Figure 16(d), CH1 records an input of 872 mVpp and CH2 records a Stage 2 output of 2.980 Vpp. The overall voltage gain to the Stage 2 output is therefore 2.980 / 0.872 = 3.418, equivalent to 10.67 dB, in exact agreement with the calculated and simulated values. Stage 2 alone takes 3.000 Vpp and delivers 2.980 Vpp, about -0.06 dB, which confirms the unity-gain follower.
 
 <p align="center">
   <img src="../media/images/Figure16c_PCB_Stage1_440Hz.png" alt="Figure 16c: Stage 1 oscilloscope output at 440 Hz on PCB" width="48%">
@@ -448,7 +448,7 @@ The design met all key performance targets across simulation and hardware testin
 
 The upper cut-off frequency showed close agreement across all conditions, with the PCB Stage 1 measurement of approximately 29.5 kHz and PCB Stage 2 measurement of approximately 30.0 kHz both consistent with the calculated value of 28.54 kHz, the small upward shift being attributable to the negative tolerance of C1 within its ±20% tolerance. The lower cut-off frequency of approximately 6.9 Hz on PCB Stage 1 agreed with the calculated value of 6.63 Hz to within 4.1%. All measured waveforms at 440 Hz were undistorted sinusoids, confirming linear operation throughout and the phase inversion of 180° is consistent with the inverting amplifier topology of U1.
 
-At the design output power of 281 mW delivered to the 8 Ω load, the OPA551 U2 operates well within its maximum continuous power dissipation rating and no thermal management measures were required [2].
+At the design output power of 141 mW delivered to the 8 Ω load, the OPA551 U2 operates well within its maximum continuous power dissipation rating and no thermal management measures were required [2].
 
 Possible improvements for future iterations:
 

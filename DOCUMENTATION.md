@@ -117,7 +117,7 @@ The volume scale is not linear: output increases slowly at low steps and rises s
 | Bandwidth | 28.533 kHz |
 | Stage 1 IC | TL071CP |
 | Stage 2 IC | OPA551PA |
-| Feedback resistor (R5) | 82 kΩ |
+| Feedback resistor (R1) | 82 kΩ |
 | Supply configuration | Single supply (final design) |
 
 ---
@@ -132,7 +132,7 @@ An active band-pass filter combines a high-pass and a low-pass response in a sin
   <img src="media/images/Figure1_BPF.png" alt="Ideal band-pass filter frequency response" width="550">
 </p>
 
-Using an op-amp rather than passive components (resistors and capacitors alone) provides a non-zero output impedance and allows the filter to drive a subsequent stage without loading affecting the frequency response.
+Using an op-amp rather than passive components (resistors and capacitors alone) provides a low output impedance and allows the filter to drive a subsequent stage without loading affecting the frequency response.
 
 <p align="center">
   <img src="media/images/Figure2_BPF_Circuit.png" alt="Generic active band-pass filter circuit" width="500">
@@ -153,7 +153,7 @@ The TL071CP is a single JFET-input operational amplifier. Key characteristics re
 - JFET input stage provides high input impedance and low input bias current, minimising loading on the audio source
 - Gain-bandwidth product of 3 MHz, sufficient to maintain accuracy across the 28.54 kHz upper cutoff frequency
 - Slew rate of 13 V/µs, well above the requirement for a 3 Vpp signal at 28.54 kHz
-- Supply range of ±2 V to ±18 V (or equivalent single supply up to 36 V)
+- Supply range of ±2.25 V to ±18 V (or equivalent single supply up to 36 V)
 - Low offset voltage suitable for audio-frequency applications
 
 ### 6.3 Cutoff Frequency Design
@@ -167,14 +167,14 @@ fL = 1 / (2π × R2 × C2)    target: 5 Hz
 The upper cutoff frequency is set by R1 and C1:
 
 ```
-fH = 1 / (2π × R1 × C1)    target: 28.54 kHz
+fH = 1 / (2π × R1 × C1)    target: 29 kHz, actual: 28.54 kHz
 ```
 
 Component subscripts match the schematic designators used throughout this project. The exact calculated values for R1, R2, C1 and C2 are worked through in [report/JOURNAL.md](report/JOURNAL.md#4-design-calculations).
 
 ### 6.4 Voltage Gain
 
-The midband voltage gain is set by the ratio of the feedback resistor (R5 = 82 kΩ) to the input resistor. The target gain brings the 0.868 Vpp input up to 3 Vpp at the Stage 1 output.
+The midband voltage gain is set by the ratio of the feedback resistor (R1 = 82 kΩ) to the input resistor (R2 = 24 kΩ). The target gain brings the 0.868 Vpp input up to 3 Vpp at the Stage 1 output.
 
 Measured at 440 Hz on the completed PCB: input 0.868 Vpp, output 3.000 Vpp, giving a gain of approximately 3.46.
 
@@ -190,7 +190,7 @@ Measured at 440 Hz on the completed PCB: input 0.868 Vpp, output 3.000 Vpp, givi
 
 The OPA551PA is a high-voltage, high-current operational amplifier. Key characteristics:
 
-- Continuous output current up to ±200 mA, well above the requirement for 3 Vpp across 8 Ω (approximately 375 mA peak)
+- Continuous output current up to ±200 mA, above the 187.5 mA peak needed for 3 Vpp across 8 Ω
 - Wide supply range: up to ±30 V
 - Built-in thermal shutdown protection
 - Unity-gain stable
@@ -200,7 +200,7 @@ The OPA551PA is a high-voltage, high-current operational amplifier. Key characte
 
 Stage 2 is configured as a unity-gain voltage follower (output connected directly to the inverting input). The output voltage equals the input voltage at all frequencies within the op-amp bandwidth. No additional gain is introduced; the sole purpose of this stage is to provide the current drive that Stage 1 cannot supply into an 8 Ω load.
 
-Measured at 440 Hz on the completed PCB: input 0.872 Vpp, output 2.980 Vpp, confirming unity gain to within measurement precision.
+Measured at 440 Hz on the completed PCB: Stage 2 takes the 3.000 Vpp from Stage 1 and delivers 2.980 Vpp, about -0.06 dB, confirming unity gain to within measurement precision. From the 0.872 Vpp phone input to this output the overall gain is 3.42 V/V (10.67 dB).
 
 ---
 
@@ -356,7 +356,7 @@ Measurements were taken at 440 Hz using a TBS1052C oscilloscope. A 470 nF capaci
 | Stage | Input | Output | Notes |
 |---|---|---|---|
 | Stage 1 (TL071 active filter) | 0.868 Vpp | 3.000 Vpp | Meets 3 Vpp target exactly |
-| Stage 2 (OPA551 buffer) | 0.872 Vpp | 2.980 Vpp | Unity gain confirmed |
+| Stage 2 (OPA551 buffer) | 0.872 Vpp (phone input) | 2.980 Vpp | Overall gain 3.42 V/V (10.67 dB). Stage 2 alone is close to unity: 3.000 Vpp in, 2.980 Vpp out, about -0.06 dB |
 
 ### 12.2 Performance Summary
 
@@ -364,8 +364,8 @@ Measurements were taken at 440 Hz using a TBS1052C oscilloscope. A 470 nF capaci
 |---|---|---|---|---|---|
 | Stage 1 output at 440 Hz | 3.0 Vpp | n/a | n/a | n/a | 3.000 Vpp |
 | Stage 2 output at 440 Hz | 3.0 Vpp | n/a | n/a | n/a | 2.980 Vpp |
-| Lower cutoff fL | 6.63 Hz | n/a | n/a | n/a | n/a |
-| Upper cutoff fH | 28.54 kHz | n/a | n/a | n/a | n/a |
+| Lower cutoff fL | 6.63 Hz | 6.60 Hz | ~7.2 Hz | ~6.8 Hz | ~6.9 Hz (Stage 1), ~13.2 Hz (Stage 2) |
+| Upper cutoff fH | 28.54 kHz | 27.7 kHz | ~26.0 kHz | ~27.1 kHz | ~29.5 kHz (Stage 1), ~30.0 kHz (Stage 2) |
 
 The full comparison table with calculated, simulated and measured data across all four test configurations is in the [full technical report](report/REPORT.md#42-pcb-testing).
 
@@ -389,17 +389,21 @@ The amplifier passband (6.63 Hz to 28.54 kHz) covers the full range of human hea
 |---|---|---|---|
 | U1 | Op-amp | TL071CP | Stage 1: inverting active band-pass filter |
 | U2 | Op-amp | OPA551PA | Stage 2: unity-gain power buffer |
-| R1 | Resistor | Sets fH with C1 | Upper cutoff high-pass element |
-| R2 | Resistor | Sets fL with C2 | Lower cutoff low-pass element |
-| R3 | Resistor | Voltage divider | Single-supply bias network |
-| R4 | Resistor | Voltage divider | Single-supply bias network |
-| R5 | Resistor | 82 kΩ | Feedback resistor, sets midband gain |
-| C1 | Capacitor | Sets fH with R1 | Upper cutoff frequency element |
-| C2 | Capacitor | Sets fL with R2 | Lower cutoff frequency element |
-| D1, D2 | Diode | Protection | Power supply clamping |
-| n/a | Capacitors | Decoupling | Op-amp supply pin decoupling |
+| R1 | Resistor | 82 kΩ | Feedback resistor, sets midband gain and fH with C1 |
+| R2 | Resistor | 24 kΩ | Input resistor, sets midband gain and fL with C2 |
+| R3, R4 | Resistor | 24 kΩ | Single-supply bias divider |
+| R5 | Resistor | 24 kΩ | Second summing input resistor |
+| R6 | Resistor | 3.3 kΩ | LED current limiting |
+| R7 | Resistor | 8.2 Ω | Load resistor |
+| C1 | Capacitor | 68 pF | Upper cutoff element, with R1 |
+| C2, C6 | Capacitor | 1 µF | Lower cutoff element with R2 and input coupling |
+| C3, C4, C7 | Capacitor | 100 nF | Supply decoupling |
+| C5 | Capacitor | 10 µF | Bias network decoupling |
+| C8 | Capacitor | 2200 µF | Output DC blocking |
+| D1 | LED | Green | Power indicator |
+| D2, D3 | Diode | 1N4007 | Clamp the OPA551 output to ground and to the positive rail |
 
-Exact values for R1, R2, C1 and C2 are worked through in [report/JOURNAL.md](report/JOURNAL.md#4-design-calculations). The original Excel workbooks (including the full BOM with Aston MB252 stock codes) were replaced with markdown before this project was published, since they contained private credentials; see [report/JOURNAL.md](report/JOURNAL.md#14-github-publication).
+Exact values for R1, R2, C1 and C2 are worked through in [report/JOURNAL.md](report/JOURNAL.md#4-design-calculations). The original Excel workbooks (including the full BOM with Aston MB252 stock codes) were replaced with markdown before this project was published, since they held personal details and course material; see [report/JOURNAL.md](report/JOURNAL.md#14-github-publication).
 
 ---
 
