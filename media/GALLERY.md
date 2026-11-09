@@ -152,7 +152,7 @@
   <tr>
     <td width="45%">
       <b>Frequency Response - Simulation</b><br>
-      Proteus SPICE frequency sweep result across the audio band, showing the band-pass response centred on the 5 Hz to 28.54 kHz passband.
+      Proteus SPICE frequency sweep result across the audio band, showing the band-pass response across the 6.63 Hz to 28.54 kHz passband.
     </td>
     <td>
       <img src="images/proteus_frequency_response_simulation.png" width="100%">
@@ -208,7 +208,7 @@
   <tr>
     <td width="45%">
       <b>Stage 2 Output - PCB at 440 Hz</b><br>
-      Oscilloscope trace showing the OPA551 buffer output on the completed PCB. Measured at 2.980 Vpp, confirming unity gain.
+      Oscilloscope trace showing the OPA551 buffer output on the completed PCB. Measured at 2.980 Vpp from a 3.000 Vpp Stage 1 output, confirming unity gain to about -0.06 dB.
     </td>
     <td>
       <img src="images/Figure16d_PCB_Stage2_440Hz.png" width="100%">

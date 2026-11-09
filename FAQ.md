@@ -63,7 +63,7 @@ The repository does not carry the Proteus project file. The schematic, PCB layou
 **Where are the original Excel workbooks?**
 
 > [!NOTE]
-> I replaced the original design calculation workbooks with markdown before publishing this project, since they contained private credentials. The full design calculations, component value derivations and frequency response data are preserved in [report/JOURNAL.md](report/JOURNAL.md#4-design-calculations).
+> I replaced the original design calculation workbooks with markdown before publishing this project, since they held personal details and course material. The full design calculations, component value derivations and frequency response data are preserved in [report/JOURNAL.md](report/JOURNAL.md#4-design-calculations).
 
 ---
 

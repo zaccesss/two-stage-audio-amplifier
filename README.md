@@ -88,7 +88,7 @@ PCB measurements at 440 Hz:
 | Stage | Input | Output | Notes |
 |---|---|---|---|
 | Stage 1 (TL071 active filter) | 0.868 Vpp | 3.000 Vpp | Meets 3 Vpp target |
-| Stage 2 (OPA551 buffer) | 0.872 Vpp | 2.980 Vpp | Unity gain confirmed |
+| Stage 2 (OPA551 buffer) | 0.872 Vpp (phone input) | 2.980 Vpp | Overall gain 3.42 V/V (10.67 dB). Stage 2 alone is close to unity: 3.000 Vpp in, 2.980 Vpp out, about -0.06 dB |
 
 Frequency response was verified across the full audio band on both breadboard and PCB. Full results with simulation comparison are in [DOCUMENTATION.md](DOCUMENTATION.md#12-results).
 
@@ -113,7 +113,7 @@ Frequency response was verified across the full audio band on both breadboard an
 | Oscilloscope | Tektronix TBS1052C | Waveform capture and peak-to-peak voltage measurement |
 | Function generator | Hameg HM8030 | Generating sine wave test signals for frequency response measurements |
 | Audio source | iPhone 14 Pro Max | 440 Hz sine wave input for amplifier characterisation and testing |
-| DC power supply | Dual-output bench PSU | Providing split supply (±15 V) for breadboard op-amp testing |
+| DC power supply | Dual-output bench PSU | Providing split supply (±9 V) for breadboard op-amp testing |
 | Breadboard | 830-point | Dual supply and single supply circuit prototyping |
 | Multimeter | - | Verifying virtual ground bias voltage before fitting ICs |
 | Soldering iron | - | PCB component assembly and rework |

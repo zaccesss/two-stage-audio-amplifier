@@ -9,6 +9,20 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.2.1] - 2026-11-09
+
+### Fixed
+
+- Output power is 141 mW average (9 / 64 W). 281 mW was the peak figure
+- Peak current for 3 Vpp across 8 Ω is 187.5 mA, not 375 mA
+- The results tables no longer call the 0.872 Vpp to 2.980 Vpp reading unity gain: that is the overall gain and Stage 2 alone is 3.000 Vpp to 2.980 Vpp
+- The C8 cut-off (9.04 Hz) sits above the filter's 6.63 Hz, so the two combine to about 12 Hz
+- D2 and D3 are described from the schematic as clamps on the OPA551 output
+- The phone table now has the real reading for every volume step
+- Component designators and values in the documentation match the report's bill of materials
+- Gain figures agree between the report text and its comparison table, and the summary table in the documentation is filled in
+- Supply figures, the 29 kHz target, the low output impedance wording and the wording on why the workbooks were replaced
+
 ## [0.2.0] - 2026-11-03
 
 ### Added
