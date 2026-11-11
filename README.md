@@ -98,7 +98,7 @@ Frequency response was verified across the full audio band on both breadboard an
 
 <div align="center">
 
-| <img src="media/assets/proteus.jpg" alt="Proteus" width="60" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" width="60" /> | <img src="https://techstack-generator.vercel.app/github-icon.svg" alt="GitHub" width="60" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" width="60" /> | <img src="media/assets/excel-icon.png" alt="Microsoft Excel" width="60" /> | <img src="media/assets/word-icon.png" alt="Microsoft Word" width="60" /> |
+| <img src="media/assets/proteus.jpg" alt="Proteus" width="60" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" width="60" /> | <img src="https://cdn.jsdelivr.net/gh/qkrdmstlr3/techstack-generator@1a8656741692dfe08effc82600f4d0d4bb87d420/static/github-icon.svg" alt="GitHub" width="60" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" width="60" /> | <img src="media/assets/excel-icon.png" alt="Microsoft Excel" width="60" /> | <img src="media/assets/word-icon.png" alt="Microsoft Word" width="60" /> |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | **Proteus** | **Git** | **GitHub** | **VS Code** | **Excel** | **Word** |
 

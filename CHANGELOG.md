@@ -9,6 +9,12 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-11-11
+
+### Fixed
+
+- The README stack icons load from the icon project's own repository at a fixed commit. The old host refuses every request, so they showed as broken images
+
 ## [0.2.1] - 2026-11-09
 
 ### Fixed
@@ -20,7 +26,7 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - D2 and D3 are described from the schematic as clamps on the OPA551 output
 - The phone table now has the real reading for every volume step
 - Component designators and values in the documentation match the report's bill of materials
-- Gain figures agree between the report text and its comparison table, and the summary table in the documentation is filled in
+- Gain figures agree between the report text and its comparison table. The summary table in the documentation is filled in
 - Supply figures, the 29 kHz target, the low output impedance wording and the wording on why the workbooks were replaced
 
 ## [0.2.0] - 2026-11-03
